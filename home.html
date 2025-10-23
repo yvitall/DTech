@@ -3,55 +3,91 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>DTech - Página Inicial</title>
+        <title>Home | DTech</title>
+        <link rel="shortcut icon" href="assets/favicon_io/favicon.ico" type="image/dtech-icon">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     </head>
 
     <body>
         <header>
-            <nav>
-                <img src="assets/logo png/DTECH - GW@2x.png" alt="logo-dtech" width="160px">
+            <nav class="navbar">
+                <a href="">
+                    <span class="material-symbols-outlined">menu
+                    </span>
+                </a>
+                <!--MENU HAMBURGER
+                <ul>
+            <li>
+                <img src="" alt="homePage">
+                <a href="">HOME</a>
+            </li>
+            <li>
+                <img src="" alt="schedulePage">
+                <a href="">AGENDAR</a>
+            </li>
+            <li>
+                <img src="" alt="historicPage">
+                <a href="">HISTÓRICO</a>
+            </li>
+            <li>
+                <img src="" alt="shopPage">
+                <a href="">LOJA</a>
+            </li>
+            <li>
+                <img src="" alt="rankingPage">
+                <a href="">RANKING</a>
+            </li>
+        </ul>
+             SERÁ UM MODAL EM TODAS PÁGINAS E NO NAV!!!! 
+             PAINEL DE VALIDAÇÕES FOR ADMIN(DESCARTECH)   
+                -->
+                <img src="assets/logo-png/DTECH-2GB.png" alt="logo-dtech" width="160px">
 
-                Olá,<a href=""><strong> Chicout</strong></a>
-
+                <span>Olá,<strong> Chicout</strong></span>
             </nav>
         </header>
 
-
-        <section class="saldo-section">
-            <div class="saldo-local">
-
-                <h2>
-                    <span class="saldo-1">SALDO</span>
-                    <span class="ec-coins">EC COINS</span>
-                </h2>
-
-                <div class="moeda">
-                    <span class="nome-moeda">EC</span>
-                    <span class="valor-moeda">87</span>
+        <section>
+            <div class="saldoUsu">
+                <h3>Saldo EC COIN</h3>
+                <div class="saldo">
+                    <span class="prefix">EC</span>
+                    <span class="quantia">87</span> <!-- futuramente via JS -->
                 </div>
             </div>
         </section>
-
-        <section class="agendar">
-            <h3>AGENDAR</h3>
+        <section class="ranking">
+            <a href="rankingPage.html">
+            <span class="material-symbols-outlined">social_leaderboard</span>
+            <span>RANKING</span>
+            </a>
         </section>
 
-        <section class="historico">
-            <h3>HISTÓRICO</h3>
+        <section class="acoes">
+            <div class="cardAcao">
+                <a href="agendarPage.html">
+                    <span class="material-symbols-outlined">
+                        calendar_month  
+                    </span>
+                    <span>AGENDAR</span>
+                </a>
+                <a href="historicoPage.html">
+                    <span class="material-symbols-outlined">
+                        sync_alt
+                    </span>
+                    <span>HISTÓRICO</span>
+                </a>
+            </div>
+            <a href="lojaPage.html">
+                <span class="material-symbols-outlined">
+                    shopping_cart
+                </span>
+                <span>LOJA</span>
+            </a>
         </section>
-
-        <section class="loja">
-            <h3>LOJA</h3>
-        </section>
-
-        <section class="rank">
-            <h3>RANKING</h3>
-        </section>
-
-        <p>Últimas Atividades</p>
-
-        <section class="visualizar-historico">
-            <h3>Visualizar Histórico</h3>
+        
+        <section class="ultimasAtividades">
+            <!-- Deve ser implementado com JS para exibir as últimas transações do usuário (histórico)-->
         </section>
 
         <footer>
