@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastre-se | DTech</title>
+    <link rel="shortcut icon" href="assets/favicon_io/favicon.ico" type="image/dtech-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav id="fix-nav">
+            <a href="">
+                <span class="material-symbols-outlined">menu</span> <!--MODAL W/ PAGES-->
+            </a>
+            <img src="assets/logo-png/DTECH-2GB.png" alt="logo-dtech" width="160px">
+            <span class="material-symbols-outlined">account_circle</span>
+            <span>Olá, <span>USER</span></span> <!--NOME DE USUARIO E FOTO, COM MODAL PARA SAIR-->
+        </nav>
+    </header>
+    <section id="agendamentoDescarte">
+        <h2>Preencha os Dados</h2>
+        <p>Preencha os dados abaixo para realizar um agendamento</p>
+        <form action="#">
+            <label for="nameUser">Nome</label>
+            <input type="text" id="nameUser" name="nome" required>
+            <br>
+            <label for="cursoOrDepto">Curso ou Departamento</label><!--Identificar através cadastro do usuário-->
+            <input type="text" id="cursoOrDepto" name="cursoOuDepto" required>
+            <br>
+            <span>
+                <label for="dataDescarte">Data do Descarte</label>
+                <input type="date" id="dataDescarte" name="dataDescarte" required>
+            </span>
+            <span>
+                <label for="hora">Hora</label>
+                <select name="horaDescarte" id="horaDescarte" required> 
+                    <!--OPÇÕES DISPONÍVEIS (NENHUM OUTRO AGENDAMENTO), A CADA 30MIN CONSIDERANDO INTERVALOS-->
+                    <option value="10:00">10:00</option>
+                    <option value="10:30">10:30</option>
+                    <option value="11:00">11:00</option>
+                </select>
+            </span>
+            <br>
+            <h3>Endereço do Descarte</h3>
+            <p>Rua Bisco Cardoso Ayres, S/n <br>
+            Santo Amaro, Recife - PE, 50050-480</p>
+            <p id="endDescarte">Clique aqui para abrir com<a href="https://www.google.com/maps/dir//Rua+Bispo+Cardoso+Ayres,+S%2Fn+-+Santo+Amaro,+Recife+-+PE,+50050-480/@-8.0541818,-34.9674222,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x7ab18eae467c0d9:0x6418af1323fac8e0!2m2!1d-34.8850203!2d-8.05419?entry=ttu&g_ep=EgoyMDI1MTAyMC4wIKXMDSoASAFQAw%3D%3D">Google Maps</a></p>
+
+            <input type="checkbox" id="pilhaebaterias" name="itensDescartar" value="pilhasBaterias">
+            <label for="itensDescartar">Pilhas/Baterias</label>
+            <input type="checkbox" id="placasEletronicas" name="itensDescartar" value="placasEletronicas">
+            <label for="itensDescartar">Placas Eletrônicas</label>
+            <input type="checkbox" id="celulares" name="itensDescartar" value="celularesTablets">
+            <label for="itensDescartar">Celulares/Tablets</label>
+            <input type="checkbox" id="computadores" name="itensDescartar" value="computadoresNotebooks">
+            <label for="itensDescartar">Computadores/Notebooks</label>
+            <input type="checkbox" id="tecladosMouses" name="itensDescartar" value="tecladosMouses">
+            <label for="itensDescartar">Teclados/Mouses</label>
+            <input type="checkbox" id="cabos" name="itensDescartar" value="cabos">
+            <label for="itensDescartar">Cabos</label>
+            <input type="checkbox" id="outros" name="itensDescartar" value="outros">
+            <label for="itensDescartar">Outro</label>
+            <br>
+            <button type="submit">Agendar</button>
+        </form> <!--MODAL COM AGENDAMENTO CONCLUIDO OU NÃO-->
+    </section>
+</body>
+</html>
