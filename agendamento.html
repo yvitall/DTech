@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastre-se | DTech</title>
+    <title>Agendamento | DTech</title>
     <link rel="shortcut icon" href="assets/favicon_io/favicon.ico" type="image/dtech-icon">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
@@ -19,10 +19,11 @@
             <span>Olá, <span>USER</span></span> <!--NOME DE USUARIO E FOTO, COM MODAL PARA SAIR-->
         </nav>
     </header>
-    <a href="home.html">
+    <nav class="return">
+        <a href="home.html">
         <span class="material-symbols-outlined">arrow_back</span>
         HOME
-    </a>
+    </a></nav>
     <section id="agendamentoDescarte">
         <h2>Preencha os Dados</h2>
         <p>Preencha os dados abaixo para realizar um agendamento</p>
@@ -50,25 +51,37 @@
             <h3>Endereço do Descarte</h3>
             <p>Rua Bisco Cardoso Ayres, S/n <br>
             Santo Amaro, Recife - PE, 50050-480</p>
-            <p id="endDescarte">Clique aqui para abrir com<a href="https://www.google.com/maps/dir//Rua+Bispo+Cardoso+Ayres,+S%2Fn+-+Santo+Amaro,+Recife+-+PE,+50050-480/@-8.0541818,-34.9674222,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x7ab18eae467c0d9:0x6418af1323fac8e0!2m2!1d-34.8850203!2d-8.05419?entry=ttu&g_ep=EgoyMDI1MTAyMC4wIKXMDSoASAFQAw%3D%3D">Google Maps</a></p>
+            <a id="endDescarte" href="https://www.google.com/maps/dir//Rua+Bispo+Cardoso+Ayres,+S%2Fn+-+Santo+Amaro,+Recife+-+PE,+50050-480/@-8.0541818,-34.9674222,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x7ab18eae467c0d9:0x6418af1323fac8e0!2m2!1d-34.8850203!2d-8.05419?entry=ttu&g_ep=EgoyMDI1MTAyMC4wIKXMDSoASAFQAw%3D%3D">Abrir com Google Maps</a></p>
 
-            <input type="checkbox" id="pilhaebaterias" name="itensDescartar" value="pilhasBaterias">
-            <label for="itensDescartar">Pilhas/Baterias</label>
+            <input type="checkbox" id="pilhaebaterias" name="itensDescartar" value="pilhas&Baterias">
+            <label for="pilhaebaterias">Pilhas/Baterias</label>
             <input type="checkbox" id="placasEletronicas" name="itensDescartar" value="placasEletronicas">
-            <label for="itensDescartar">Placas Eletrônicas</label>
-            <input type="checkbox" id="celulares" name="itensDescartar" value="celularesTablets">
-            <label for="itensDescartar">Celulares/Tablets</label>
-            <input type="checkbox" id="computadores" name="itensDescartar" value="computadoresNotebooks">
-            <label for="itensDescartar">Computadores/Notebooks</label>
-            <input type="checkbox" id="tecladosMouses" name="itensDescartar" value="tecladosMouses">
-            <label for="itensDescartar">Teclados/Mouses</label>
+            <label for="placasEletronicas">Placas Eletrônicas</label>
+            <input type="checkbox" id="celulares" name="itensDescartar" value="celulares&Tablets">
+            <label for="celulares">Celulares/Tablets</label>
+            <input type="checkbox" id="computadores" name="itensDescartar" value="computadores&Notebooks">
+            <label for="computadores">Computadores/Notebooks</label>
+            <input type="checkbox" id="tecladosMouses" name="itensDescartar" value="teclados&Mouses">
+            <label for="tecladosMouses">Teclados/Mouses</label>
             <input type="checkbox" id="cabos" name="itensDescartar" value="cabos">
-            <label for="itensDescartar">Cabos</label>
+            <label for="cabos">Cabos</label>
             <input type="checkbox" id="outros" name="itensDescartar" value="outros">
-            <label for="itensDescartar">Outro</label>
+            <label for="outros">Outro</label> <!--Se "outros", abrir caixa para digitar outros itens (estudar possibilidade de registrar como opção)-->
             <br>
             <button type="submit">Agendar</button>
         </form> <!--MODAL COM AGENDAMENTO CONCLUIDO OU NÃO-->
     </section>
+    <footer>
+        <p>DTech © 2025. Todos os direitos reservados.</p>
+        <p>
+            Projeto desenvolvido por: 
+            <div id="links-rodape">
+                <a href="#">Gabriel Costa</a>,
+                <a href="#">Gustavo Marques</a>,
+                <a href="#">Sophia Ramara</a> &
+                <a href="https://github.com/yvitall">Yuri Vital</a>
+           </div>
+        </p>
+    </footer>
 </body>
 </html>

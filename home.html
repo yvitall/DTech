@@ -10,12 +10,78 @@
 
     <body>
         <header>
-            <nav class="navbar">
-                <a href="">
-                    <span class="material-symbols-outlined">menu
+        <nav id="fix-nav">
+            <a href="">
+                <span class="material-symbols-outlined">menu</span> <!--MODAL W/ PAGES-->
+            </a>
+            <img src="assets/logo-png/DTECH-2GB.png" alt="logo-dtech" width="160px">
+            <span class="material-symbols-outlined">account_circle</span>
+            <span>Olá, <span>USER</span></span> <!--NOME DE USUARIO E FOTO, COM MODAL PARA SAIR-->
+        </nav>
+        </header>
+
+        <section>
+            <div class="saldoUsu">
+                <h3>Saldo EC</h3>
+                <div class="saldo">
+                    <span class="prefix">EC</span>
+                    <span class="quantia">87</span> <!-- futuramente via JS -->
+                </div>
+            </div>
+        </section>
+        <section class="ranking">
+            <a href="ranking.html">
+            <span class="material-symbols-outlined">social_leaderboard</span>
+            <span>RANKING</span>
+            </a>
+        </section>
+
+        <section class="acoes">
+            <div class="cardAcao">
+                <a href="agendamento.html">
+                    <span class="material-symbols-outlined">
+                        calendar_month  
                     </span>
+                    <span>AGENDAR</span>
                 </a>
-                <!--MENU HAMBURGER
+                <a href="historico.html">
+                    <span class="material-symbols-outlined">
+                        sync_alt
+                    </span>
+                    <span>HISTÓRICO</span>
+                </a>
+            </div>
+            <a href="loja.html">
+                <span class="material-symbols-outlined">
+                    shopping_cart
+                </span>
+                <span>LOJA</span>
+            </a>
+        </section>
+        
+        <section class="ultimasAtividades">
+            <a href="historico.html">Visualizar Histórico</a>
+            <!-- Deve ser implementado com JS para exibir as últimas transações do usuário (histórico)-->
+        </section>
+
+        <footer>
+            <p>DTech © 2025. Todos os direitos reservados.</p>
+            <p>
+                Projeto desenvolvido por: 
+                <div id="links-rodape">
+                    <a href="#">Gabriel Costa</a>,
+                    <a href="#">Gustavo Marques</a>,
+                    <a href="#">Sophia Ramara</a> &
+                    <a href="https://github.com/yvitall">Yuri Vital</a>
+            </div>
+            </p>
+    </footer>
+    </body>
+    </html>
+
+
+
+    <!--MENU HAMBURGER
                 <ul>
             <li>
                 <img src="" alt="homePage">
@@ -41,66 +107,3 @@
              SERÁ UM MODAL EM TODAS PÁGINAS E NO NAV!!!! 
              PAINEL DE VALIDAÇÕES FOR ADMIN(DESCARTECH)   
                 -->
-                <img src="assets/logo-png/DTECH-2GB.png" alt="logo-dtech" width="160px">
-
-                <span>Olá,<strong> Chicout</strong></span>
-            </nav>
-        </header>
-
-        <section>
-            <div class="saldoUsu">
-                <h3>Saldo EC COIN</h3>
-                <div class="saldo">
-                    <span class="prefix">EC</span>
-                    <span class="quantia">87</span> <!-- futuramente via JS -->
-                </div>
-            </div>
-        </section>
-        <section class="ranking">
-            <a href="rankingPage.html">
-            <span class="material-symbols-outlined">social_leaderboard</span>
-            <span>RANKING</span>
-            </a>
-        </section>
-
-        <section class="acoes">
-            <div class="cardAcao">
-                <a href="agendamento.html">
-                    <span class="material-symbols-outlined">
-                        calendar_month  
-                    </span>
-                    <span>AGENDAR</span>
-                </a>
-                <a href="historicoPage.html">
-                    <span class="material-symbols-outlined">
-                        sync_alt
-                    </span>
-                    <span>HISTÓRICO</span>
-                </a>
-            </div>
-            <a href="lojaPage.html">
-                <span class="material-symbols-outlined">
-                    shopping_cart
-                </span>
-                <span>LOJA</span>
-            </a>
-        </section>
-        
-        <section class="ultimasAtividades">
-            <!-- Deve ser implementado com JS para exibir as últimas transações do usuário (histórico)-->
-        </section>
-
-        <footer>
-        <p>DTech © 2025. Todos os direitos reservados.</p>
-        <p>
-            Projeto desenvolvido por: 
-            <div id="links-rodape">
-                <a href="#">Gabriel Costa</a>,
-                <a href="#">Gustavo Marques</a>,
-                <a href="#">Sophia Ramara</a> &
-                <a href="https://github.com/yvitall">Yuri Vital</a>
-           </div>
-        </p>
-    </footer>
-    </body>
-    </html>
