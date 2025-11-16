@@ -4,24 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DTech | Descarte de Eletrônicos</title>
+    
     <link rel="shortcut icon" href="assets/favicon_io/favicon.ico" type="image/dtech-icon">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> <!--Tailwind Apply-->
+
 </head>
 <body>
-    <header>
-        <nav>
-            <img src="assets/logo-png/DTECH-2GB.png" alt="logo-dtech" width="160px">
-            <ul>
-                <li><a href="#sobrenos">Sobre Nós</a></li>
-                <li><a href="#saibaMais">Saiba Mais</a></li>
-                <li><a href="#agendar">Agendar</a></li>
-            </ul>
-            <button type="button"><a href="login.html">Entrar</a></button>
-            <span>ou <a href="cadastro.html">Cadastrar-se</a></span>
-        </nav>
-    </header>
+    <div id="aplicacao" class="bg-[#0a0a0a] -z-10">
+        <div class="relative h-screen">
+        <img 
+            src="../../assets/img/background-green.png" 
+            alt="static_background_green"
+            class="absolute inset-0 w-full h-full object-cover -z-1">
+        </div>
+<!--BUG NO BACKGROUND: PRETO E PERSONALIZADO-->
+        <div>
+            <header>
+                <img src="../../assets/logo-png/DTECH-1GW.png" alt="logo-dtech">
+                    <div class="navigation">
+                        <ul>
+                            <li><a href="#sobrenos" class="nav_links">Sobre Nós</a></li>
+                            <li><a href="#saibaMais" class="nav_links">Saiba Mais</a></li>
+                            <li><a href="#agendar" class="nav_links">Agendar</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav_action">
+                        <a href="../login/login.html" class="login">Login</a>
+                        <span>ou</span>
+                        <a href="../cadastro/cadastro.html">Cadastre-se</a>
+                    </div>
+            </header>
+        </div>
+
         <section id="sobrenos">
-            <img src="#" alt="background"> <!--loop lighting-->
+
             <h2>SOBRE NÓS</h2>
                 <p>
                 Nossa jornada começou como um projeto universitário,<br> proposto em sala de aula com um desafio importante:<br> desenvolver uma solução digital com foco em TI Verde — um<br> conceito que promove o uso sustentável da tecnologia.
@@ -70,7 +88,7 @@
                 </span>
             </div>
         </section>
-        <div class="botao-agendar"><button type="button" id="agendar"><a href="login.html">AGENDE AGORA</a></button>  </div>  
+        <a href="../login/login.html">AGENDE AGORA!</a>
     <footer>
         <p>DTech © 2025. Todos os direitos reservados.</p>
         <p>
@@ -83,5 +101,6 @@
            </div>
         </p>
     </footer>
+    </div>
 </body>
 </html>
