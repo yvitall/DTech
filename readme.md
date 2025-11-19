@@ -8,9 +8,11 @@
 
 ## 🚀 Tecnologias
 
-- HTML
-- TAILWINDCSS
-- JAVASCRIPT
+<p align=center>
+  <a href="https://skillicons.dev">
+  <img src="https://skillicons.dev/icons?i=js,html,tailwind,git,github,vscode,figma">
+  </a>
+</p>
 
 ## 📔 Conhecimentos adquiridos/praticados
 

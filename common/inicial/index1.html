@@ -10,7 +10,7 @@
     -->
 
 
-    <link rel="shortcut icon" href="assets/favicon_io/favicon.ico" type="image/dtech-icon">
+    <link rel="shortcut icon" href="../../assets/favicon_io/favicon.ico" type="image/dtech-icon">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,18 +24,33 @@
 </head>
 
 <body class="bg-[#0a0a0a] font-['Space_Grotesk']">
-    <div id="header" class="relative min-h-screen bg-transparent">
-        <img src="../../assets/img/background-green.png" alt="static_background_green"
-            class="absolute inset-0 w-full h-full object-cover -z-10">
+    <div id="aplicacao" class="relative min-h-screen bg-transparent">
+        <div id="header">
+            <img src="../../assets/img/background-green.png" alt="static_background_green"
+                class="absolute inset-0 w-full h-full object-cover -z-10">
 
-        <header class="bg-[#0a0a0a] relative z-20 mx-auto px-15 py-5">
-            <div class="flex justify-between items-center ">
-                <img src="../../assets/logo-png/DTECH-1GW.png" alt="logo-dtech" class="h-10">
 
-                <div id="nav" class="navigation">
-                    <ul class="flex gap-10">
-                        <li>
-                            <a href="#sobrenos" class="
+            <header class="bg-[#0a0a0a] relative z-20 mx-auto px-15 py-5">
+                <div class="flex justify-between items-center ">
+                    <img src="../../assets/logo-png/DTECH-1GW.png" alt="logo-dtech" class="h-10">
+
+                    <div id="nav" class="navigation">
+                        <ul class="flex gap-10">
+                            <li>
+                                <a href="#sobrenos" class="
+                                    text-xl
+                                    font-semibold
+                                    inline-block
+                                    text-white 
+                                    transition-all 
+                                    hover:text-[#CBFF58] 
+                                    hover:-translate-y-1
+                                    ">
+                                    SOBRE NÓS
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#saibamais" class="
                             text-xl
                             font-semibold
                             inline-block
@@ -44,24 +59,11 @@
                             hover:text-[#CBFF58] 
                             hover:-translate-y-1
                             ">
-                                SOBRE NÓS
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#saibamais" class="
-                            text-xl
-                            font-semibold
-                            inline-block
-                            text-white 
-                            transition-all 
-                            hover:text-[#CBFF58] 
-                            hover:-translate-y-1
-                            ">
-                                SAIBA MAIS
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#agende" class="
+                                    SAIBA MAIS
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#agende" class="
                             text-xl
                             font-semibold
                             inline-block
@@ -69,30 +71,86 @@
                             transition-all 
                             hover:text-[#CBFF58] 
                             hover:-translate-y-1">
-                                AGENDAR
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div id="nav_action" class="relative flex items-center gap-3 text-white font-semibold">
-                    <a href="../login/login.html" class="
+                                    AGENDAR
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="nav_action" class="relative flex items-center gap-3 text-white font-semibold">
+                        <a href="../login/login.html" class="
                         border-2 py-1 px-6 rounded-xl transition-all hover:bg-[#CBFF58] hover:text-[#0A0A0A] 
                         hover:border-transparent
                             ">
-                        LOGIN
-                    </a>
-                    <p>ou</p>
-                    <a href="../cadastro/cadastro.html"
-                        class=" text-white hover:text-[#CBFF58] 
+                            LOGIN
+                        </a>
+                        <p>ou</p>
+                        <a href="../cadastro/cadastro.html"
+                            class=" text-white hover:text-[#CBFF58] 
                     border-b-2 border-transparent transition-colors duration-300 hover:border-[#CBFF58]">CADASTRE-SE</a>
+                    </div>
                 </div>
-            </div>
+        </div>
         </header>
 
 
         <main class="relative z-10">
-            <div id="sobrenos" class="bg-transparent">
-                <h1 class="text-white ">SOBRE NÓS</h1>
+            <div id="sobrenos" class="flex bg-transparent m-30 justify-between items-center cursor-default">
+                <div id="aboutme-text" class="max-w px-20">
+                    <p class="text-white text font-bold text-8xl mb-2">SOBRE NÓS</p>
+                    <p class="text-white text-xl mb-5">
+                        Nossa jornada começou como um projeto universitário,<br> proposto em sala de aula com um desafio
+                        importante:<br> desenvolver uma solução digital com foco em TI Verde — um<br> conceito que promove o
+                        uso sustentável da tecnologia.</p>
+                    <p class="text-white text-xl">
+                        A partir dessa ideia, nasceu nosso site de descarte consciente<br> de eletrônicos, com o objetivo
+                        de facilitar para as pessoas o<br> descarte correto de equipamentos eletrônicos e, ao mesmo tempo,
+                        conscientizar sobre os impactos ambientais do lixo eletrônico.
+                    </p>
+                </div>
+                <img src="../../assets/img/techdescart-removebg-preview.png" alt="lixeira-tech"
+                    class="w-2/4 transition-all hover:scale-115">
+            </div>
+
+            <section id="saibamais" class="relative bg-[#0A0A0A] -mt-30 pb-20 z-20">
+                <div class="flex bg-transparent items-center justify-center grid-cols-3 mx-auto h-auto max-w-7xl gap-30"> <!--SOBREPOSIÇÃO DOS CARD SOB O BACKGROUND VERDE-->
+                <div id="card" class="bg-[#0A0A0A] w-70 rounded-xl">
+                    <div id="card_content" class="flex flex-col gap-4">
+                        <span class="material-symbols-outlined text-white text-5xl">add</span>
+                        <div id="card-text">
+                            <p>
+                                Registre-se! <br>
+                                Prezamos pela sua escolha e pelo futuro sustentável <br> 
+                                que construímos juntos. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="card" class="bg-[#0A0A0A] w-70">
+                    <div id="card_content">
+                        <span class="material-symbols-outlined">add</span>
+                        <div>
+                            <p>
+                                Registre-se!
+                                Prezamos pela sua escolha e pelo futuro sustentável 
+                                que construímos juntos. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="card" class="bg-[#0A0A0A] w-70">
+                    <div id="card_content">
+                        <span class="material-symbols-outlined">add</span>
+                        <div>
+                            <p>
+                                Registre-se!
+                                Prezamos pela sua escolha e pelo futuro sustentável 
+                                que construímos juntos. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
             </div>
         </main>
     </div>
