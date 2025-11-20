@@ -27,7 +27,7 @@
     <div id="aplicacao" class="relative min-h-screen bg-transparent">
         <div id="header">
             <img src="../../assets/img/background-green.png" alt="static_background_green"
-                class="absolute inset-0 w-full h-full object-cover -z-10">
+                class="absolute inset-0 w-full h-screen object-cover -z-10">
 
 
             <header class="bg-[#0a0a0a] relative z-20 mx-auto px-15 py-5">
@@ -99,11 +99,14 @@
                     <p class="text-white text font-bold text-8xl mb-2">SOBRE NÓS</p>
                     <p class="text-white text-xl mb-5">
                         Nossa jornada começou como um projeto universitário,<br> proposto em sala de aula com um desafio
-                        importante:<br> desenvolver uma solução digital com foco em TI Verde — um<br> conceito que promove o
+                        importante:<br> desenvolver uma solução digital com foco em TI Verde — um<br> conceito que
+                        promove o
                         uso sustentável da tecnologia.</p>
                     <p class="text-white text-xl">
-                        A partir dessa ideia, nasceu nosso site de descarte consciente<br> de eletrônicos, com o objetivo
-                        de facilitar para as pessoas o<br> descarte correto de equipamentos eletrônicos e, ao mesmo tempo,
+                        A partir dessa ideia, nasceu nosso site de descarte consciente<br> de eletrônicos, com o
+                        objetivo
+                        de facilitar para as pessoas o<br> descarte correto de equipamentos eletrônicos e, ao mesmo
+                        tempo,
                         conscientizar sobre os impactos ambientais do lixo eletrônico.
                     </p>
                 </div>
@@ -111,49 +114,152 @@
                     class="w-2/4 transition-all hover:scale-115">
             </div>
 
-            <section id="saibamais" class="relative bg-[#0A0A0A] -mt-30 pb-20 z-20">
-                <div class="flex bg-transparent items-center justify-center grid-cols-3 mx-auto h-auto max-w-7xl gap-30"> <!--SOBREPOSIÇÃO DOS CARD SOB O BACKGROUND VERDE-->
-                <div id="card" class="bg-[#0A0A0A] w-70 rounded-xl">
-                    <div id="card_content" class="flex flex-col gap-4">
-                        <span class="material-symbols-outlined text-white text-5xl">add</span>
-                        <div id="card-text">
-                            <p>
-                                Registre-se! <br>
-                                Prezamos pela sua escolha e pelo futuro sustentável <br> 
-                                que construímos juntos. 
-                            </p>
+            <section id="saibamais" class="relative z-20 -mt-25">
+
+                <div
+                    class="bg-transparent items-center justify-center grid grid-cols-3 mx-auto h-auto max-w-7xl gap-30">
+
+                    <div id="card"
+                        class="bg-[#0a0a0a] rounded-xl w-full h-80 transition-all hover:-translate-y-5 hover:shadow-2xl hover:shadow-black">
+                        <div id="card_content" class="flex flex-col gap-4 items-center mt-5">
+                            <span class="material-symbols-outlined text-[#CBFF58]" style="font-size: 3rem;">add</span>
+                            <div id="card-text">
+                                <p class="text-white px-8 py-10 ">
+                                    <span class="text-[#CBFF58]">Registre-se!</span> <br>
+                                    Prezamos pela sua escolha e pelo futuro sustentável <br>
+                                    que construímos juntos.
+                                </p>
+                            </div>
                         </div>
+                        <div id="border-final" class="border-b-2 border-[#CBFF58] mt-8 mx-8"></div>
                     </div>
-                </div>
-                <div id="card" class="bg-[#0A0A0A] w-70">
-                    <div id="card_content">
-                        <span class="material-symbols-outlined">add</span>
-                        <div>
-                            <p>
-                                Registre-se!
-                                Prezamos pela sua escolha e pelo futuro sustentável 
-                                que construímos juntos. 
-                            </p>
+                    <div id="card"
+                        class="bg-[#0a0a0a] rounded-xl w-full h-80 transition-all hover:-translate-y-5 hover:shadow-2xl hover:shadow-black">
+                        <div id="card_content" class="flex flex-col gap-4 items-center mt-5">
+                            <span class="material-symbols-outlined text-[#cbff58]"
+                                style="font-size: 3rem;">calendar_month</span>
+                            <div id="card-text">
+                                <p class="text-white px-8 py-10 ">
+                                    Transforme seu descarte <br> em atitude sustentável: <br> agende agora e entregue
+                                    seus eletrônicos<br> na Faculdade ESUDA.
+                                </p>
+                            </div>
                         </div>
+                        <div id="border-final" class="border-b-2 border-[#CBFF58] mt-2 mx-8"></div>
                     </div>
-                </div>
-                <div id="card" class="bg-[#0A0A0A] w-70">
-                    <div id="card_content">
-                        <span class="material-symbols-outlined">add</span>
-                        <div>
-                            <p>
-                                Registre-se!
-                                Prezamos pela sua escolha e pelo futuro sustentável 
-                                que construímos juntos. 
-                            </p>
+                    <div id="card"
+                        class="bg-[#0a0a0a] rounded-xl w-full h-80 transition-all hover:-translate-y-5 hover:shadow-2xl hover:shadow-black">
+                        <div id="card_content" class="flex flex-col gap-4 items-center mt-5">
+                            <span class="material-symbols-outlined text-[#cbff58]"
+                                style="font-size: 3rem;">recycling</span>
+                            <div id="card-text">
+                                <p class="text-white px-8 py-10 ">
+                                    Descarte, valide e <span class="text-[#CBFF58]">ganhe</span>! <br> Receba <span
+                                        class="text-[#CBFF58]">EC COINS</span> e <br> troque por <span
+                                        class="text-[#CBFF58]">recompensas</span> <br> incríveis em lojas parceiras.
+                                </p>
+                            </div>
+                        </div>
+                        <div id="border-final" class="border-b-2 border-[#CBFF58] mt-8 mx-8"></div>
+                    </div>
+            </section>
+
+            <section id="relatorio_initial" class="relative z-20 mt-30">
+                <div class="flex flex-col items-center">
+                    <h1 class="text-white text-6xl font-semibold">Dezembro</h1>
+                    <div
+                        class="bg-transparent items-center justify-center grid grid-cols-2 mx-auto h-auto max-w-7xl gap-30 mt-15">
+
+                        <!--CARD 1 - QTD DESCARTES-->
+                        <div class="bg-[#0a0a0a] border-2 border-transparent rounded-xl p-8 h-80 transition-all
+                        duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#cbff58]/50
+                        hover:border-[#cbff58] flex flex-col justify-between">
+
+                            <div>
+                                <p class="text-white text-3xl font-semibold text-center">
+                                    Total de Descartes
+                                </p>
+                            </div>
+
+                            <div class="flex flex-col items-center justify-center flex-1">
+                                <span class="counter text-8xl font-bold text-[#CBFF58]" data-target="30">0</span>
+                            </div>
+
+                            <div class="border-b-2 border-[#CBFF58] w-full"></div>
+                        </div>
+                        <div
+                            class="bg-[#0a0a0a] border-2 border-transparent rounded-xl p-8 h-80 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#cbff58]/50 hover:border-[#cbff58] flex flex-col justify-between">
+
+                            <!-- CARD 2 - QTD LIXO DESCARTADO-->
+                            <div>
+                                <p class="text-white text-3xl font-semibold text-center">
+                                    Qtd. Lixo Coletado
+                                </p>
+                            </div>
+
+                            <div class="flex flex-col items-center justify-center flex-1">
+                                <div class="flex items-baseline gap-3">
+                                    <span class="counter text-8xl font-bold text-[#CBFF58]" data-target="12">0</span>
+                                    <span class="text-5xl font-bold text-[#CBFF58]">kg</span>
+                                </div>
+                            </div>
+
+                            <div class="border-b-2 border-[#CBFF58] w-full"></div>
                         </div>
                     </div>
                 </div>
             </section>
-            
-            </div>
-        </main>
+            <section id="CTA" class="relative mt-10">
+                <div class="flex flex-col items-center">
+                    <p class="text-white font-semibold text-5xl mb-10">Pronto para começar?</p>
+                    <a href="../cadastro/cadastro.html" class="text-white text-3xl font-medium border-3 py-4 px-8 rounded-3xl transition-all
+                    hover:border-transparent hover:bg-[#cbff58] hover:text-[#0a0a0a] hover:font-bold hover:-translate-y-2">CADASTRE-SE AGORA!</a>
+                </div>
+            </section>
     </div>
+    </main>
+    <footer>
+        <div id="dev" class="flex flex-col items-center justify-center mt-10 mb-5">
+            <p class="text-white font-semibold">DTech©2025</p>
+            <p class="text-white">Desenvolvido por: <a href="github.com/yvitall" class="text-[#cbff58]">Yuri Vital</a>, <a href="#" class="text-[#cbff58]">Sophia Ramara</a>, <a href="#" class="text-[#cbff58]">Gustavo Marques</a> & <span class="text-[#cbff58]">Gabriel Costa</span></p>
+        </div>
+    </footer>
+    </div>
+    <script>
+        function animateCounter(element, target, duration) {
+            let startTime = null;
+            const start = 0;
+
+            function animation(currentTime) {
+                if (startTime === null) startTime = currentTime;
+                const timeElapsed = currentTime - startTime;
+                const progress = Math.min(timeElapsed / duration, 1);
+
+                const easedProgress = 1 - Math.pow(1 - progress, 3);
+                const value = Math.floor(easedProgress * (target - start) + start);
+
+                element.textContent = value.toLocaleString('pt-BR');
+
+                if (progress < 1) {
+                    requestAnimationFrame(animation);
+                }
+            }
+
+            requestAnimationFrame(animation);
+        }
+
+        function startCounters() {
+            const counters = document.querySelectorAll('.counter');
+
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                animateCounter(counter, target, 2000);
+            });
+        }
+
+        // Iniciar quando carregar
+        window.addEventListener('load', startCounters);
+    </script>
 </body>
 
 </html>
