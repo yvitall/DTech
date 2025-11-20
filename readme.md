@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-  <img src="assets/img/img-prototype.png" width="100%" />
+  <img src="assets/img/img-prototype.png" width="100%"/>
 </p>
 
 ## 🚀 Tecnologias
