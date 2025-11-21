@@ -171,7 +171,7 @@
                         class="bg-transparent items-center justify-center grid grid-cols-2 mx-auto h-auto max-w-7xl gap-30 mt-15">
 
                         <!--CARD 1 - QTD DESCARTES-->
-                        <div class="bg-[#0a0a0a] border-2 border-transparent rounded-xl p-8 h-80 transition-all
+                        <div  id="stats-section" class="bg-[#0a0a0a] border-2 border-transparent rounded-xl p-8 h-80 transition-all
                         duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#cbff58]/50
                         hover:border-[#cbff58] flex flex-col justify-between">
 
@@ -181,7 +181,7 @@
                                 </p>
                             </div>
 
-                            <div class="flex flex-col items-center justify-center flex-1">
+                            <div id="stats-section" class="flex flex-col items-center justify-center flex-1">
                                 <span class="counter text-8xl font-bold text-[#CBFF58]" data-target="30">0</span>
                             </div>
 
@@ -225,41 +225,60 @@
         </div>
     </footer>
     </div>
-    <script>
-        function animateCounter(element, target, duration) {
-            let startTime = null;
-            const start = 0;
+<script>
+    function animateCounter(element, target, duration) {
+        let startTime = null;
+        const start = 0;
 
-            function animation(currentTime) {
-                if (startTime === null) startTime = currentTime;
-                const timeElapsed = currentTime - startTime;
-                const progress = Math.min(timeElapsed / duration, 1);
+        function animation(currentTime) {
+            if (startTime === null) startTime = currentTime;
+            const timeElapsed = currentTime - startTime;
+            const progress = Math.min(timeElapsed / duration, 1);
 
-                const easedProgress = 1 - Math.pow(1 - progress, 3);
-                const value = Math.floor(easedProgress * (target - start) + start);
+            const easedProgress = 1 - Math.pow(1 - progress, 3);
+            const value = Math.floor(easedProgress * (target - start) + start);
 
-                element.textContent = value.toLocaleString('pt-BR');
+            element.textContent = value.toLocaleString('pt-BR');
 
-                if (progress < 1) {
-                    requestAnimationFrame(animation);
-                }
+            if (progress < 1) {
+                requestAnimationFrame(animation);
             }
-
-            requestAnimationFrame(animation);
         }
 
-        function startCounters() {
-            const counters = document.querySelectorAll('.counter');
+        requestAnimationFrame(animation);
+    }
 
-            counters.forEach(counter => {
-                const target = parseInt(counter.getAttribute('data-target'));
-                animateCounter(counter, target, 2000);
-            });
+    function startCounters() {
+        const counters = document.querySelectorAll('.counter');
+
+        counters.forEach(counter => {
+            const target = parseInt(counter.getAttribute('data-target'));
+            animateCounter(counter, target, 2000);
+        });
+    }
+
+    // Criar o observer
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            // Quando a section entrar na viewport
+            if (entry.isIntersecting) {
+                startCounters();
+                // Parar de observar após iniciar (anima apenas uma vez)
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.8 // 50% da section precisa estar visível
+    });
+
+    // Observar a section quando carregar
+    window.addEventListener('load', () => {
+        const statsSection = document.querySelector('#stats-section'); // ou a classe da sua section
+        if (statsSection) {
+            observer.observe(statsSection);
         }
-
-        // Iniciar quando carregar
-        window.addEventListener('load', startCounters);
-    </script>
+    });
+</script>
 </body>
 
 </html>
