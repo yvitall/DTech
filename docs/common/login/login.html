@@ -1,51 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Login | DTech</title>
-        <link rel="shortcut icon" href="assets/favicon_io/favicon.ico" type="image/dtech-icon">
-        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
-    </head>
-<body>
-    <header>
-        <nav class="return">
-            <a href="index.html">
-            <span class="material-symbols-outlined">arrow_back</span>
-                RETORNAR
-            </a>
-            <img src="assets/logo-png/DTECH-2GB.png" alt="logo-dtech" width="160px">
-            <p>Sou <a href="loginAdmin.html">Admin</a></p>
-        </nav>
-    </header>
 
-    <section>
-        <h3>Sejam <b>Bem-Vindos</b>!</h3>
-        <h2>Identifique-se</h2>
-        <div class="btn-loginoptions"> <!--BUTTONS DEVEM ABRIR MODAIS ESPECIFICOS PARA CADA-->
-            <button type="button">
-                DescarTech <!--Link? para abrir modal-->
-            </button>
-            <button type="button">
-                ColeTech
-            </button>
-            <button type="button">
-                Parceiro
-            </button>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DTech | Descartes de Eletrônicos</title>
+    <!--
+    #0A0A0A / #CBFF58 / #FFFFFF / #9747FF / #A97373
+    -->
+
+
+    <link rel="shortcut icon" href="../assets/favicon_io/favicon.ico" type="image/dtech-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!--Tailwind Apply-->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+
+<body class="bg-[#0A0A0A] font-['Space_Grotesk'] text-white">
+    <header id="menu-principais" class="">
+        
+            <div id="background-green" class="">
+                <img src="../../../assets/img/background-green.png" alt="static_background_green"
+                class="absolute inset-0 w-full h-screen object-cover -z-10">
+            </div>
+            <div id="header" class="flex items-center mx-auto justify-between py-5 px-15">
+            <div id="return_menu" class="flex items-center gap-3 ">
+                <a href="../../index.html"><span
+                        class="material-symbols-outlined">arrow_back</span></a>
+                        <a href="../../index.html"><span class="text-lg transition-colors hover:border-b-2 hover:border-[#cbff58]">Retornar</span></a>
+                    </div>
+
+            <img src="../../../assets/logo-png/DTECH-1GW.png" class="h-10" alt="logo-dtech">
+
+            <div id="login_admin">
+                <a href="../../../admin/login_admin.html" class="text-lg">Sou <span class="hover:text-[#0a0a0a] hover:border-b-2 hover:border-[#0a0a0a]">Admin</span></a>
+            </div>
         </div>
-        <h4>Não tem uma conta? <a href="cadastro.html">Cadastre-se</a></h4>
-    </section>
-    <footer>
-        <p>DTech © 2025. Todos os direitos reservados.</p>
-        <p>
-            Projeto desenvolvido por: 
-            <div id="links-rodape">
-                <a href="#">Gabriel Costa</a>,
-                <a href="#">Gustavo Marques</a>,
-                <a href="#">Sophia Ramara</a> &
-                <a href="https://github.com/yvitall">Yuri Vital</a>
-           </div>
-        </p>
-    </footer>
+    </header>
+    <main>
+
+    </main>
 </body>
+
 </html>
+
+<!-- 
+USAR SECTIONS 
+LÓGICA DE BOX/DIV
+-->
