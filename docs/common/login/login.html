@@ -23,30 +23,51 @@
 
 </head>
 
-<body class="bg-[#0A0A0A] font-['Space_Grotesk'] text-white">
+<body class="bg-[#0A0A0A] font-['Space_Grotesk'] text-white flex flex-col min-h-screen">
     <header id="menu-principais" class="">
         
             <div id="background-green" class="">
                 <img src="../../assets/img/background-green.png" alt="static_background_green"
                 class="absolute inset-0 w-full h-screen object-cover -z-10">
             </div>
-            <div id="header" class="flex items-center mx-auto justify-between py-5 px-15">
+
+            <div id="header" class="flex items-center mx-auto justify-between py-10 px-15">
+
             <div id="return_menu" class="flex items-center gap-3 ">
                 <a href="../../index.html"><span
                         class="material-symbols-outlined">arrow_back</span></a>
                         <a href="../../index.html"><span class="text-lg transition-colors hover:border-b-2 hover:border-[#cbff58]">Retornar</span></a>
                     </div>
 
-            <img src="../../assets/logo-png/DTECH-1GW.png" class="h-10" alt="logo-dtech">
+            <img src="../../assets/logo-png/DTECH-1GW.png" class="h-12" alt="logo-dtech">
 
             <div id="login_admin">
                 <a href="../../admin/#" class="text-lg">Sou <span class="hover:text-[#0a0a0a] hover:border-b-2 hover:border-[#0a0a0a] hover:font-semibold">Admin</span></a>
             </div>
         </div>
     </header>
-    <main>
-
+    <main class="flex-1 flex flex-col items-center justify-center">
+        <div id="btns" class="flex flex-col justify-center items-center">
+            <div id="texts" class="flex flex-col justify-center items-center mb-5 mt-auto gap-3 mb-15">
+                <p class="text-5xl">Sejam <span>Bem-Vindos</span>!</p>
+                <p class="text-8xl">Identifique-se</p>
+            </div>
+            <div id="botoes_acesso" class="flex items-center justify-center gap-10 mx-auto text-5xl">
+                <a href="#modaldescartech" class="px-6 py-5 border-2 border-white rounded-3xl transition-all hover:border-transparent hover:bg-[#0a0a0a]  hover:text-white hover:font-semibold hover:-translate-y-5 hover:shadow-2xl">DescarTech</a>
+                <a href="#modalcoletech" class="px-6 py-5 border-2 border-white rounded-3xl transition-all hover:border-transparent hover:bg-[#0a0a0a]  hover:text-white hover:font-semibold hover:-translate-y-5 hover:shadow-2xl">ColeTech</a>
+                <a href="#modalparceiro" class="px-6 py-5 border-2 border-white rounded-3xl transition-all hover:border-transparent hover:bg-[#0a0a0a]  hover:text-white hover:font-semibold hover:-translate-y-5 hover:shadow-2xl">Parceiro</a>
+            </div>
+            <div id="no_acc" class="mt-15">
+                <p class="text-xl">Ainda não tem uma conta? <a href="../cadastro/cadastro.html" class="hover:font-bold hover:border-b-2 hover:border-[#cbff58] hover:text-[#cbff58] ">Cadastre-se</a>!</p>
+            </div>
+        </div>
     </main>
+    <footer>
+        <div id="dev" class="flex flex-col items-center justify-center mt-10 mb-5">
+            <p class="text-white font-semibold">DTech©2025</p>
+            <p class="text-white">Desenvolvido por: <a href="github.com/yvitall" class="text-[#cbff58]">Yuri Vital</a>, <a href="#" class="text-[#cbff58]">Sophia Ramara</a>, <a href="#" class="text-[#cbff58]">Gustavo Marques</a> & <span class="text-[#cbff58]">Gabriel Costa</span></p>
+        </div>
+    </footer>
 </body>
 
 </html>
