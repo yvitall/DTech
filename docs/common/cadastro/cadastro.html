@@ -1,47 +1,74 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastre-se | DTech</title>
-    <link rel="shortcut icon" href="assets/favicon_io/favicon.ico" type="image/dtech-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <title>DTech | Descartes de Eletrônicos</title>
+    <!--
+    #0A0A0A / #CBFF58 / #FFFFFF / #9747FF / #A97373
+    -->
+
+
+    <link rel="shortcut icon" href="../../assets/favicon_io/favicon.ico" type="image/dtech-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!--Tailwind Apply-->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
 </head>
-<body>
-    <header>
-        <nav class="return">
-            <a href="index.html">
-            <span class="material-symbols-outlined">arrow_back</span>
-                RETORNAR
-            </a>
-            <img src="assets/logo-png/DTECH-2GB.png" alt="logo-dtech" width="160px">
-        </nav>
-    </header>
-    <section id="options-cadastro">
-            <h4>A mudança começa por você!</h4>
-            <h3>Cadastre-se</h3>
-            <div>
-                <button>
-                    DescarTech
-                </button>
-                <button>
-                    Parceiro
-                </button>
+
+<body class="bg-[#0A0A0A] font-['Space_Grotesk'] text-white flex flex-col min-h-screen">
+    <header id="menu-principais" class="">
+        
+            <div id="background-green" class="">
+                <img src="../../assets/img/background-green.png" alt="static_background_green"
+                class="absolute inset-0 w-full h-screen object-cover -z-10">
             </div>
-            <h4>Já tem uma conta? <a href="login.html">Faça Login</a></h4>
-    </section>
+
+            <div id="header" class="flex items-center mx-auto justify-between py-10 px-15">
+
+            <div id="return_menu" class="flex items-center gap-3 ">
+                <a href="../../index.html"><span
+                        class="material-symbols-outlined">arrow_back</span></a>
+                        <a href="../../index.html"><span class="text-lg transition-colors hover:border-b-2 hover:border-[#cbff58]">Retornar</span></a>
+                    </div>
+
+            <img src="../../assets/logo-png/DTECH-1GW.png" class="h-12 mr-auto ml-auto" alt="logo-dtech">
+        </div>
+    </header>
+    <main class="flex-1 flex flex-col items-center justify-center">
+
+        <div id="btns" class="flex flex-col justify-center items-center">
+            
+            <div id="texts" class="flex flex-col justify-center items-center mt-auto gap-2 mb-12">
+                <p class="text-2xl">A mudança começa por você!</p>
+                <p class="text-8xl">Cadastre-se</p>
+            </div>
+            <div id="botoes_acesso" class="flex items-center justify-center gap-10 mx-auto text-5xl">
+
+                <a href="cadastro-descartech.html" class="px-6 py-5 border-2 border-white rounded-3xl transition-all hover:border-transparent hover:bg-[#0a0a0a]  hover:text-white hover:font-semibold hover:-translate-y-5 hover:shadow-2xl">DescarTech</a>
+                
+                <a href="cadastro-parceiro.html" class="px-6 py-5 border-2 border-white rounded-3xl transition-all hover:border-transparent hover:bg-[#0a0a0a]  hover:text-white hover:font-semibold hover:-translate-y-5 hover:shadow-2xl">Parceiro</a>
+                
+            </div>
+            
+            <div id="no_acc" class="mt-15">
+                <p class="text-xl">Já tem uma conta? <a href="../login/login.html" class="hover:font-bold hover:border-b-2 hover:border-[#cbff58] hover:text-[#cbff58] ">Faça Login</a>!</p>
+            </div>
+        </div>
+    </main>
     <footer>
-        <p>DTech © 2025. Todos os direitos reservados.</p>
-        <p>
-            Projeto desenvolvido por: 
-            <div id="links-rodape">
-                <a href="#">Gabriel Costa</a>,
-                <a href="#">Gustavo Marques</a>,
-                <a href="#">Sophia Ramara</a> &
-                <a href="https://github.com/yvitall">Yuri Vital</a>
-           </div>
-        </p>
+        <div id="dev" class="flex flex-col items-center justify-center mt-10 mb-5">
+            <p class="text-white font-semibold">DTech©2025</p>
+            <p class="text-white">Desenvolvido por: <a href="github.com/yvitall" class="text-[#cbff58]">Yuri Vital</a>, <a href="#" class="text-[#cbff58]">Sophia Ramara</a>, <a href="#" class="text-[#cbff58]">Gustavo Marques</a> & <span class="text-[#cbff58]">Gabriel Costa</span></p>
+        </div>
     </footer>
 </body>
 </html>
+
