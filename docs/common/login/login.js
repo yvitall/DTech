@@ -106,13 +106,13 @@ document.getElementById('formLogin').addEventListener('submit', function (e) {
     setTimeout(() => {
         switch (usuario.cargo) {
             case 'Admin':
-                window.location.href = '../../admin/ref-admin-page.html'; //alterar conforme a página certa estiver configurada
+                window.location.href = '../home/home-ini.html'; //alterar conforme a página certa estiver configurada
                 break;
             case 'DescarTech':
             case 'ColeTech':
             case 'Parceiro':
             default:
-                window.location.href = '../home/home.html';
+                window.location.href = '../home/home-ini.html';
                 break;
         }
     }, 1000);

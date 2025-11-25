@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | DTech</title>
+
+    <link rel="shortcut icon" href="../../assets/favicon_io/favicon.ico" type="image/dtech-icon">
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!--Tailwind Apply-->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+
+<body class="flex flex-col bg-[#0A0A0A] font-['Space_Grotesk'] text-white flex flex-col min-h-screen inset-0">
+
+    <header class="relative flex bg-[#0A0A0A] w-full h-auto py-5 px-15">
+
+        <div id="fix_nav" class="flex items-center justify-between w-full ">
+            <div id="menu_hamb">
+                <a href="">
+                    <span class="material-symbols-outlined text-white hover:text-[#cbff58] cursor-pointer transition-all hover:-rotate-180">
+                    menu
+                    </span>
+                </a>
+            </div>
+
+            <img src="../../assets/logo-png/DTECH-1GW.png" alt="logo-dtech" class="h-8 ml-auto mr-auto pl-15">
+
+            <p id="user_account" class="text-white text-md">
+            </p>
+        </div>
+    </header>
+    <main class="flex flex-col mt-10 py-5 px-15">
+
+        <section id="saldo" class="flex px-80 border-2 border-white rounded-2xl w-1/4 ml-auto mr-auto mb-10 items-center justify-center">
+        
+            <div>
+                <h3 class="flex bg-[#0a0a0a] w-fit text-white font-semibold text-xl -mt-5 px-2">Saldo <span class="text-[#cbff58] px-1">EsudaCoins</span></h3>
+        
+                <div class="flex justify-center items-center gap-3 mt-3 mb-3">
+                    <span class="text-2xl font-medium text-[#cbff58]">EC</span>
+                    <h2 id="saldo_value" class="text-6xl font-bold">300</h2>
+                </div>
+            </div>
+        </section>
+        
+        <section id="dashboard" class="flex flex-col mt-10">
+            <h1 class="text-5xl text-white font-semibold">Dashboard</h1>
+            <div id="actions" class="flex grid-cols-5 -ml-3 gap-3">
+                
+                <div id="action_item">
+                    <a href="#" class="
+                flex
+                h-40 w-50
+                bg-blue-500/10
+                border-2 
+                border-blue-500/60  
+                rounded-2xl 
+                p-6 m-4
+                justify-center
+                items-center
+                text-xl text-blue-400 
+                "
+                ><span class="material-symbols-outlined text">calendar_month</span>
+                Agendar
+                </a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+    <script src="home.js"></script>    
+</body>
+
+</html>

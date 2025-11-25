@@ -83,7 +83,7 @@ document.getElementById('formCadastro').addEventListener('submit', function(e) {
     
     // Redireciona para login após 2 segundos
     setTimeout(() => {
-        window.location.href = '../login/parceiro-login.html';
+        window.location.href = '../login/login-uni.html';
     }, 2000);
 });
 
