@@ -1,12 +1,26 @@
 // 1️⃣ ADMIN FIXO
 const adminFixos = [
     {
-        email: '17252398@esuda.edu.br',
-        senha: '123456',
+        email: 'yvital@dtech.com',
+        senha: 'admin@dtech',
         nome: 'Yuri Vital',
         cargo: 'Admin',
         fixo: true
-    }
+    },
+    {
+        email: 'sramara@dtech.com',
+        senha: 'admin@dtech',
+        nome: 'Sophia Ramara',
+        cargo: 'Admin',
+        fixo: true
+    },
+    {
+        email: 'gmarques@dtech.com',
+        senha: 'admin@dtech',
+        nome: 'Gustavo Marques',
+        cargo: 'Admin',
+        fixo: true
+    },
 ];
 
 // 2️⃣ PEGAR TODOS OS USUÁRIOS (Inclui fixos + storage)
@@ -92,7 +106,7 @@ document.getElementById('formLogin').addEventListener('submit', function (e) {
     setTimeout(() => {
         switch (usuario.cargo) {
             case 'Admin':
-                window.location.href = '../../admin/admin-page.html'; //alterar conforme a página certa estiver configurada
+                window.location.href = '../../admin/ref-admin-page.html'; //alterar conforme a página certa estiver configurada
                 break;
             case 'DescarTech':
             case 'ColeTech':
