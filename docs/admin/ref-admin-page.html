@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DTech | Dashboard</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-[#0A0A0A] font-['Space_Grotesk'] text-white min-h-screen">
+    
+    <!-- Header -->
+    <header class="bg-white/5 backdrop-blur-xl border-b border-white/10 p-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <span class="text-2xl font-bold">
+                    <span class="text-[#cbff58]">D</span>TECH
+                </span>
+            </div>
+            
+            <div class="flex items-center gap-6">
+                <div class="text-right">
+                    <p class="font-semibold" id="nomeUsuario">-</p>
+                    <p class="text-xs text-white/60" id="cargoUsuario">-</p>
+                </div>
+                <button onclick="fazerLogout()" class="px-4 py-2 bg-red-500/20 border border-red-500/50 text-red-300 rounded-lg hover:bg-red-500/30 transition-all">
+                    Sair
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main class="max-w-7xl mx-auto p-6">
+        
+        <h1 class="text-3xl font-bold mb-8">Dashboard</h1>
+
+        <!-- Grid de Funcionalidades -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <!-- Card DescarTech -->
+            <div id="card-descartech" class="hidden bg-blue-500/10 border-2 border-blue-500/30 rounded-2xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-blue-400" style="font-size: 2rem;">delete</span>
+                    <h2 class="text-xl font-bold text-blue-400">DescarTech</h2>
+                </div>
+                <p class="text-white/60 mb-4">Registrar descarte de eletrônicos</p>
+                <button class="w-full py-2 bg-blue-500 rounded-lg hover:bg-blue-600 transition-all">
+                    Novo Descarte
+                </button>
+            </div>
+
+            <!-- Card ColeTech -->
+            <div id="card-coletech" class="hidden bg-green-500/10 border-2 border-green-500/30 rounded-2xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-green-400" style="font-size: 2rem;">local_shipping</span>
+                    <h2 class="text-xl font-bold text-green-400">ColeTech</h2>
+                </div>
+                <p class="text-white/60 mb-4">Gerenciar coletas agendadas</p>
+                <button class="w-full py-2 bg-green-500 rounded-lg hover:bg-green-600 transition-all">
+                    Ver Coletas
+                </button>
+            </div>
+
+            <!-- Card Parceiro -->
+            <div id="card-parceiro" class="hidden bg-purple-500/10 border-2 border-purple-500/30 rounded-2xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-purple-400" style="font-size: 2rem;">business</span>
+                    <h2 class="text-xl font-bold text-purple-400">Parceiro</h2>
+                </div>
+                <p class="text-white/60 mb-4">Relatórios e estatísticas</p>
+                <button class="w-full py-2 bg-purple-500 rounded-lg hover:bg-purple-600 transition-all">
+                    Ver Relatórios
+                </button>
+            </div>
+
+            <!-- Card Admin -->
+            <div id="card-admin" class="hidden bg-red-500/10 border-2 border-red-500/30 rounded-2xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-red-400" style="font-size: 2rem;">admin_panel_settings</span>
+                    <h2 class="text-xl font-bold text-red-400">Admin</h2>
+                </div>
+                <p class="text-white/60 mb-4">Gerenciar sistema</p>
+                <button class="w-full py-2 bg-red-500 rounded-lg hover:bg-red-600 transition-all">
+                    Painel Admin
+                </button>
+            </div>
+
+            <!-- Card Comum (todos veem) -->
+            <div class="bg-white/5 border-2 border-white/20 rounded-2xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-[#cbff58]" style="font-size: 2rem;">history</span>
+                    <h2 class="text-xl font-bold">Histórico</h2>
+                </div>
+                <p class="text-white/60 mb-4">Ver histórico de atividades</p>
+                <button class="w-full py-2 bg-white/10 border border-white/30 rounded-lg hover:bg-white/20 transition-all">
+                    Ver Histórico
+                </button>
+            </div>
+
+            <!-- Card Comum 2 -->
+            <div class="bg-white/5 border-2 border-white/20 rounded-2xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-[#cbff58]" style="font-size: 2rem;">person</span>
+                    <h2 class="text-xl font-bold">Meu Perfil</h2>
+                </div>
+                <p class="text-white/60 mb-4">Editar informações pessoais</p>
+                <button class="w-full py-2 bg-white/10 border border-white/30 rounded-lg hover:bg-white/20 transition-all">
+                    Editar Perfil
+                </button>
+            </div>
+        </div>
+
+        <!-- Estatísticas (exemplo baseado em cargo) -->
+        <div class="mt-12">
+            <h2 class="text-2xl font-bold mb-6">Estatísticas</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <div id="stat-descartes" class="hidden bg-white/5 rounded-xl p-6">
+                    <p class="text-white/60 text-sm mb-2">Total de Descartes</p>
+                    <p class="text-4xl font-bold text-[#cbff58]">42</p>
+                </div>
+
+                <div id="stat-coletas" class="hidden bg-white/5 rounded-xl p-6">
+                    <p class="text-white/60 text-sm mb-2">Coletas Realizadas</p>
+                    <p class="text-4xl font-bold text-[#cbff58]">28</p>
+                </div>
+
+                <div id="stat-usuarios" class="hidden bg-white/5 rounded-xl p-6">
+                    <p class="text-white/60 text-sm mb-2">Usuários Ativos</p>
+                    <p class="text-4xl font-bold text-[#cbff58]">156</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // VERIFICAR LOGIN
+        function verificarLogin() {
+            const dados = localStorage.getItem('usuario_logado');
+            if (!dados) {
+                window.location.href = 'login.html';
+                return null;
+            }
+            return JSON.parse(dados);
+        }
+
+        // LOGOUT
+        function fazerLogout() {
+            localStorage.removeItem('usuario_logado');
+            window.location.href = 'login.html';
+        }
+
+        // CARREGAR DADOS DO USUÁRIO
+        window.addEventListener('load', function() {
+            const usuario = verificarLogin();
+            if (!usuario) return;
+
+            // Mostrar nome e cargo
+            document.getElementById('nomeUsuario').textContent = usuario.nome;
+            document.getElementById('cargoUsuario').textContent = usuario.cargo;
+
+            // Mostrar cards baseado no cargo
+            switch(usuario.cargo) {
+                case 'DescarTech':
+                    document.getElementById('card-descartech').classList.remove('hidden');
+                    document.getElementById('stat-descartes').classList.remove('hidden');
+                    break;
+                
+                case 'ColeTech':
+                    document.getElementById('card-coletech').classList.remove('hidden');
+                    document.getElementById('stat-coletas').classList.remove('hidden');
+                    break;
+                
+                case 'Parceiro':
+                    document.getElementById('card-parceiro').classList.remove('hidden');
+                    document.getElementById('stat-descartes').classList.remove('hidden');
+                    document.getElementById('stat-coletas').classList.remove('hidden');
+                    break;
+                
+                case 'Admin':
+                    // Admin vê tudo
+                    document.getElementById('card-descartech').classList.remove('hidden');
+                    document.getElementById('card-coletech').classList.remove('hidden');
+                    document.getElementById('card-parceiro').classList.remove('hidden');
+                    document.getElementById('card-admin').classList.remove('hidden');
+                    document.getElementById('stat-descartes').classList.remove('hidden');
+                    document.getElementById('stat-coletas').classList.remove('hidden');
+                    document.getElementById('stat-usuarios').classList.remove('hidden');
+                    break;
+            }
+        });
+    </script>
+</body>
+</html>
