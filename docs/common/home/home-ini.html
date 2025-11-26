@@ -24,22 +24,144 @@
     <header class="relative flex bg-[#0A0A0A] w-full h-auto py-4 px-15">
 
         <div id="fix_nav" class="flex items-center justify-between w-full ">
-            <div id="menu_hamb">
-                <a href="">
-                    <span
-                        class="material-symbols-outlined text-white hover:text-[#cbff58] cursor-pointer transition-all hover:-rotate-180" style="font-size: 2rem;">
-                        menu
-                    </span>
-                </a>
-            </div>
+            <div id="fix_nav" class="flex items-center justify-between w-full">
+                <div id="menu_hamb">
+                    <button id="btnMenuHamb">
+                        <span
+                            class="material-symbols-outlined text-white hover:text-[#cbff58] cursor-pointer transition-all hover:rotate-180"
+                            style="font-size: 2rem;">
+                            menu
+                        </span>
+                    </button>
+                </div>
+                <div id="menuLateral"
+                    class="fixed top-0 left-0 h-full w-80 bg-[#0A0A0A] border-r-2 border-[#cbff58]/30 transform -translate-x-full transition-transform duration-300 ease-in-out z-40 shadow-2xl shadow-[#cbff58]/20">
+                    <div class="flex flex-col h-full">
+                        <!-- Cabeçalho do Menu -->
+                        <div class="flex items-center justify-between p-6 border-b border-white/20">
+                            <button id="btnFecharMenu">
+                                <span
+                                    class="material-symbols-outlined text-white hover:text-[#cbff58] cursor-pointer transition-all hover:rotate-90"
+                                    style="font-size: 1rem;">
+                                    close
+                                </span>
+                            </button>
+                        </div>
 
-            <img src="../../assets/logo-png/DTECH-1GW.png" alt="logo-dtech" class="h-8 ml-auto mr-auto pl-55">
+                        <!-- Itens do Menu -->
+                        <nav class="flex-1 overflow-y-auto py-4">
+                            <ul class="space-y-2 px-4">
+                                <!-- Opções Comuns -->
+                                <li>
+                                    <a href="home-ini.html"
+                                        class="flex items-center gap-4 px-4 py-3 text-white hover:bg-[#cbff58]/20 hover:text-[#cbff58] rounded-xl transition-all group">
+                                        <span class="material-symbols-outlined" style="font-size: 1.5rem;">home</span>
+                                        <span class="font-medium">Home</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../agendamento/agendamento.html"
+                                        class="flex items-center gap-4 px-4 py-3 text-white hover:bg-[#cbff58]/20 hover:text-[#cbff58] rounded-xl transition-all group">
+                                        <span class="material-symbols-outlined"
+                                            style="font-size: 1.5rem;">calendar_month</span>
+                                        <span class="font-medium">Agendamento</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../loja/loja.html"
+                                        class="flex items-center gap-4 px-4 py-3 text-white hover:bg-[#cbff58]/20 hover:text-[#cbff58] rounded-xl transition-all group">
+                                        <span class="material-symbols-outlined"
+                                            style="font-size: 1.5rem;">shopping_cart</span>
+                                        <span class="font-medium">Loja</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../historico/historico.html"
+                                        class="flex items-center gap-4 px-4 py-3 text-white hover:bg-[#cbff58]/20 hover:text-[#cbff58] rounded-xl transition-all group">
+                                        <span class="material-symbols-outlined"
+                                            style="font-size: 1.5rem;">sync_alt</span>
+                                        <span class="font-medium">Histórico</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../ranking/ranking.html"
+                                        class="flex items-center gap-4 px-4 py-3 text-white hover:bg-[#cbff58]/20 hover:text-[#cbff58] rounded-xl transition-all group">
+                                        <span class="material-symbols-outlined"
+                                            style="font-size: 1.5rem;">social_leaderboard</span>
+                                        <span class="font-medium">Ranking</span>
+                                    </a>
+                                </li>
 
-            <div id="actions_header" class="flex items-center justify-center">
-                <p id="user_account" class="text-white text-md mr-5">
-            </p>
-            <div id="logout">
-                <a href="../../index.html" class="
+                                <!-- Divisor -->
+                                <li class="py-2">
+                                    <div class="border-t border-white/20"></div>
+                                </li>
+
+                                <!-- Opções para Parceiro -->
+                                <li id="menu-validacao-resgate" class="hidden">
+                                    <a href="../validacao-resgate/validacao-resgate.html"
+                                        class="flex items-center gap-4 px-4 py-3 text-yellow-400 hover:bg-yellow-400/20 hover:text-yellow-300 rounded-xl transition-all group">
+                                        <span class="material-symbols-outlined"
+                                            style="font-size: 1.5rem;">request_quote</span>
+                                        <span class="font-medium">Validar Resgate</span>
+                                    </a>
+                                </li>
+                                <li id="menu-cadastrar-produto" class="hidden">
+                                    <a href="../cadastrar-produto/cadastrar-produto.html"
+                                        class="flex items-center gap-4 px-4 py-3 text-yellow-400 hover:bg-yellow-400/20 hover:text-yellow-300 rounded-xl transition-all group">
+                                        <span class="material-symbols-outlined"
+                                            style="font-size: 1.5rem;">add_shopping_cart</span>
+                                        <span class="font-medium">Cadastrar Produto</span>
+                                    </a>
+                                </li>
+
+                                <!-- Opções para Coletech -->
+                                <li id="menu-validacao-descarte" class="hidden">
+                                    <a href="../validacao-descarte/validacao-descarte.html"
+                                        class="flex items-center gap-4 px-4 py-3 text-yellow-400 hover:bg-yellow-400/20 hover:text-yellow-300 rounded-xl transition-all group">
+                                        <span class="material-symbols-outlined"
+                                            style="font-size: 1.5rem;">verified</span>
+                                        <span class="font-medium">Validar Descarte</span>
+                                    </a>
+                                </li>
+
+                                <!-- Opções para Admin -->
+                                <li id="menu-painel-admin" class="hidden">
+                                    <a href="../admin/admin.html"
+                                        class="flex items-center gap-4 px-4 py-3 text-red-400 hover:bg-red-400/20 hover:text-red-300 rounded-xl transition-all group">
+                                        <span class="material-symbols-outlined"
+                                            style="font-size: 1.5rem;">admin_panel_settings</span>
+                                        <span class="font-medium">Painel Admin</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+
+                        <!-- Rodapé do Menu -->
+                        <div class="p-4 border-t border-white/20">
+                            <div class="bg-white/5 rounded-xl p-4 mb-3">
+                                <p class="text-white/70 text-sm mb-1">Tipo de Conta:</p>
+                                <p id="tipoUsuarioMenu" class="text-[#cbff58] font-bold text-lg"></p>
+                            </div>
+                            <a href="../../index.html"
+                                class="flex items-center justify-center gap-2 w-full py-3 bg-red-400/30 border-2 border-red-400/50 text-red-500/80 rounded-xl hover:bg-red-400/50 transition-all font-semibold">
+                                <span class="material-symbols-outlined">logout</span>
+                                Sair da Conta
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div id="menuOverlay"
+                    class="fixed inset-0 bg-black/60 backdrop-blur-sm z-35 hidden transition-opacity duration-300">
+                </div>
+
+                <img src="../../assets/logo-png/DTECH-1GW.png" alt="logo-dtech" class="h-8 ml-auto mr-auto pl-55">
+
+                <div id="actions_header" class="flex items-center justify-center">
+                    <p id="user_account" class="text-white text-md mr-5">
+                    </p>
+                    <div id="logout">
+                        <a href="../../index.html" class="
                 flex
                 items-center
                 px-5
@@ -50,12 +172,12 @@
                 text-red-500/80
                 rounded-xl
                 ">
-                    <span class="material-symbols-outlined mr-1">logout</span>
-                    Sair
-                </a>
+                            <span class="material-symbols-outlined mr-1">logout</span>
+                            Sair
+                        </a>
+                    </div>
+                </div>
             </div>
-            </div>
-        </div>
     </header>
     <main class="flex flex-col mt-8 py-5 px-15">
 
@@ -74,9 +196,8 @@
                 px-2
                 cursor-default
                 ">
-                Saldo 
-                <span
-                        class="text-[#cbff58] px-1">
+                    Saldo
+                    <span class="text-[#cbff58] px-1">
                         EsudaCoins
                     </span>
                 </h3>
@@ -95,7 +216,7 @@
             <div id="grid_container" class="grid grid-cols-2 md:grid-cols-4 gap-6 w-fit mx-auto mt-5">
 
                 <div id="action_item">
-                    <a href="#" class="
+                    <a href="../agendamento/agendamento.html" class="
                 flex
                 flex-col
                 h-40 w-50
@@ -247,11 +368,15 @@
     <footer>
         <div id="dev" class="flex flex-col items-center justify-center mt-15">
             <p class="text-white font-semibold">DTech©2025</p>
-            <p class="text-white">Desenvolvido por: <a href="github.com/yvitall" class="text-[#cbff58]">Yuri Vital</a>, <a href="#" class="text-[#cbff58]">Sophia Ramara</a>, <a href="https://www.linkedin.com/in/marqgustavo" class="text-[#cbff58]">Gustavo Marques</a> & <span class="text-[#cbff58]">Gabriel Costa</span></p>
+            <p class="text-white">Desenvolvido por: <a href="github.com/yvitall" class="text-[#cbff58]">Yuri Vital</a>,
+                <a href="#" class="text-[#cbff58]">Sophia Ramara</a>, <a href="https://www.linkedin.com/in/marqgustavo"
+                    class="text-[#cbff58]">Gustavo Marques</a> & <span class="text-[#cbff58]">Gabriel Costa</span></p>
         </div>
     </footer>
     <script src="home.js"></script>
     <script src="saldo.js"></script>
+    <script src="logout.js"></script>
+    <script src="../agendamento/menu.js"></script>
 </body>
 
 </html>
