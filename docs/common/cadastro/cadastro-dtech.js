@@ -58,7 +58,8 @@ document.getElementById('formCadastro').addEventListener('submit', function(e) {
     const novoUsuario = {
         nome: nomeCompleto,
         email: emailInstitucional,
-        senha: senha, // Em produção, use hash/criptografia
+        senha: senha,
+        cargo: 'DescarTech',
         perguntaRecuperacao: perguntaRecuperacao,
         respostaRecuperacao: respostaPergunta.toLowerCase() // Salva em minúsculo para facilitar comparação
     };

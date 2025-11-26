@@ -23,19 +23,32 @@ const adminFixos = [
     },
 ];
 
+const coletech = [
+    {
+        email: 'fchicout@dtech.com',
+        senha: 'coletech@dtech',
+        nome: 'Fábio Chicout',
+        cargo: 'ColeTech',
+        fixo: true
+    }
+];
+
 // 2️⃣ PEGAR TODOS OS USUÁRIOS (Inclui fixos + storage)
 function getUsuarios() {
     const dados = localStorage.getItem('usuarios');
     const usuariosStorage = dados ? JSON.parse(dados) : [];
 
-    return [...adminFixos, ...usuariosStorage];
+    return [...adminFixos, ...usuariosStorage, ...coletech];
 }
 
-// 3️⃣ BUSCAR USUÁRIO POR EMAIL
-function buscarUsuario(email) {
+// 3️⃣ BUSCAR USUÁRIO (Corrigido para aceitar email OU emailEmpresa)
+function buscarUsuario(emailDigitado) {
     const usuarios = getUsuarios();
 
-    return usuarios.find(u => u.email === email); //apanhei pra caralho
+    // Procura se o email digitado bate com 'email' OU 'emailEmpresa'
+    return usuarios.find(u =>
+        (u.email === emailDigitado) || (u.emailEmpresa === emailDigitado)
+    );
 }
 
 // 4️⃣ VERIFICAR SE TEM LOGIN SALVO
@@ -69,17 +82,17 @@ function mostrarMensagem(texto, tipo) {
 document.getElementById('formLogin').addEventListener('submit', function (e) {
     e.preventDefault();
 
-    const email = document.getElementById('email').value.trim();
+    const emailInput = document.getElementById('email').value.trim();
     const senha = document.getElementById('senha').value;
     const lembrar = document.getElementById('lembrarLogin').checked;
 
     // Validações
-    if (!email || !senha) {
+    if (!emailInput || !senha) {
         mostrarMensagem('Preencha todos os campos!', 'erro');
         return;
     }
 
-    const usuario = buscarUsuario(email);
+    const usuario = buscarUsuario(emailInput);
 
     if (!usuario) {
         mostrarMensagem('Usuário não encontrado!', 'erro');
@@ -91,7 +104,9 @@ document.getElementById('formLogin').addEventListener('submit', function (e) {
         return;
     }
 
-    mostrarMensagem(`Bem-vindo(a), ${usuario.nome}!`, 'sucesso');
+    const nomeExibicao = usuario.nome || usuario.razaoSocial;
+
+    mostrarMensagem(`Bem-vindo(a), ${nomeExibicao}!`, 'sucesso');
 
     localStorage.setItem('usuario_logado', JSON.stringify(usuario));
 

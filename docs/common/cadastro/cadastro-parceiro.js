@@ -9,7 +9,6 @@ document.getElementById('formCadastro').addEventListener('submit', function(e) {
     // Pega os valores dos campos
     const razaoSocial = document.getElementById('razaoSocial').value.trim();
     const emailEmpresa = document.getElementById('emailEmpresa').value.trim();
-    const cnpj = document.getElementById('cnpj').value.trim();
     const senha = document.getElementById('senha').value;
     const confirmaSenha = document.getElementById('confirmaSenha').value;
     const perguntaRecuperacao = document.getElementById('perguntaRecuperacao').value;
@@ -18,10 +17,6 @@ document.getElementById('formCadastro').addEventListener('submit', function(e) {
     // Validações
     if (razaoSocial.length < 3) {
         mostrarErro('Razão Social deve ter pelo menos 3 caracteres');
-        return;
-    }
-    if (cnpj.length < 14 || cnpj.length > 14) {
-        mostrarErro('CNPJ inválido');
         return;
     }
     
@@ -61,10 +56,10 @@ document.getElementById('formCadastro').addEventListener('submit', function(e) {
     
     // Cria o objeto do usuário
     const novoUsuario = {
-        razaoSocial: razaoSocial,
+        nome: razaoSocial,
         emailEmpresa: emailEmpresa,
         senha: senha,
-        cnpj: cnpj,
+        cargo: 'Parceiro',
         perguntaRecuperacao: perguntaRecuperacao,
         respostaRecuperacao: respostaPergunta.toLowerCase() // Salva em minúsculo para facilitar comparação
     };

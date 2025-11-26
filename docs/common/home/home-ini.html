@@ -19,66 +19,239 @@
 
 </head>
 
-<body class="flex flex-col bg-[#0A0A0A] font-['Space_Grotesk'] text-white flex flex-col min-h-screen inset-0">
+<body class="flex flex-col bg-[#0A0A0A] font-['Space_Grotesk'] text-white min-h-screen inset-0">
 
-    <header class="relative flex bg-[#0A0A0A] w-full h-auto py-5 px-15">
+    <header class="relative flex bg-[#0A0A0A] w-full h-auto py-4 px-15">
 
         <div id="fix_nav" class="flex items-center justify-between w-full ">
             <div id="menu_hamb">
                 <a href="">
-                    <span class="material-symbols-outlined text-white hover:text-[#cbff58] cursor-pointer transition-all hover:-rotate-180">
-                    menu
+                    <span
+                        class="material-symbols-outlined text-white hover:text-[#cbff58] cursor-pointer transition-all hover:-rotate-180" style="font-size: 2rem;">
+                        menu
                     </span>
                 </a>
             </div>
 
-            <img src="../../assets/logo-png/DTECH-1GW.png" alt="logo-dtech" class="h-8 ml-auto mr-auto pl-15">
+            <img src="../../assets/logo-png/DTECH-1GW.png" alt="logo-dtech" class="h-8 ml-auto mr-auto pl-55">
 
-            <p id="user_account" class="text-white text-md">
+            <div id="actions_header" class="flex items-center justify-center">
+                <p id="user_account" class="text-white text-md mr-5">
             </p>
+            <div id="logout">
+                <a href="../../index.html" class="
+                flex
+                items-center
+                px-5
+                py-2
+                bg-red-400/30
+                border-2
+                border-red-400/50
+                text-red-500/80
+                rounded-xl
+                ">
+                    <span class="material-symbols-outlined mr-1">logout</span>
+                    Sair
+                </a>
+            </div>
+            </div>
         </div>
     </header>
-    <main class="flex flex-col mt-10 py-5 px-15">
+    <main class="flex flex-col mt-8 py-5 px-15">
 
-        <section id="saldo" class="flex px-80 border-2 border-white rounded-2xl w-1/4 ml-auto mr-auto mb-10 items-center justify-center">
-        
+        <section id="saldo"
+            class="flex px-60 py-5 border-2 border-white rounded-2xl w-1/4 ml-auto mr-auto mb-10 items-center justify-center">
+
             <div>
-                <h3 class="flex bg-[#0a0a0a] w-fit text-white font-semibold text-xl -mt-5 px-2">Saldo <span class="text-[#cbff58] px-1">EsudaCoins</span></h3>
-        
+                <h3 class="
+                flex 
+                bg-[#0a0a0a] 
+                w-fit 
+                text-white 
+                font-semibold 
+                text-2xl 
+                -mt-10 
+                px-2
+                cursor-default
+                ">
+                Saldo 
+                <span
+                        class="text-[#cbff58] px-1">
+                        EsudaCoins
+                    </span>
+                </h3>
+
                 <div class="flex justify-center items-center gap-3 mt-3 mb-3">
                     <span class="text-2xl font-medium text-[#cbff58]">EC</span>
-                    <h2 id="saldo_value" class="text-6xl font-bold">300</h2>
+                    <h2 id="valor_saldo" class="text-6xl font-bold"></h2>
                 </div>
             </div>
         </section>
-        
-        <section id="dashboard" class="flex flex-col mt-10">
-            <h1 class="text-5xl text-white font-semibold">Dashboard</h1>
-            <div id="actions" class="flex grid-cols-5 -ml-3 gap-3">
-                
+
+        <section id="dashboard" class="flex flex-col items-center mt-5">
+
+            <h1 class="text-5xl text-white font-semibold cursor-default">Dashboard</h1>
+
+            <div id="grid_container" class="grid grid-cols-2 md:grid-cols-4 gap-6 w-fit mx-auto mt-5">
+
                 <div id="action_item">
                     <a href="#" class="
                 flex
+                flex-col
                 h-40 w-50
-                bg-blue-500/10
-                border-2 
-                border-blue-500/60  
+                bg-[#d9d9d9]  
                 rounded-2xl 
                 p-6 m-4
                 justify-center
                 items-center
-                text-xl text-blue-400 
-                "
-                ><span class="material-symbols-outlined text">calendar_month</span>
-                Agendar
-                </a>
+                text-md text-[#0a0a0a]
+                gap-2 
+                transition-all
+                hover:bg-[#cbff58]
+                hover:scale-105
+                "><span class="material-symbols-outlined text" style="font-size: 3rem;">calendar_month</span>
+                        Agendar
+                    </a>
+                </div>
+
+                <div id="action_item">
+                    <a href="#" class="
+                flex
+                flex-col
+                h-40 w-50
+                bg-[#d9d9d9]  
+                rounded-2xl 
+                p-6 m-4
+                justify-center
+                items-center
+                text-md text-[#0a0a0a]
+                gap-2 
+                transition-all
+                hover:bg-[#cbff58]
+                hover:scale-105
+                "><span class="material-symbols-outlined text" style="font-size: 3rem;">sync_alt</span>
+                        Histórico
+                    </a>
+                </div>
+
+                <div id="action_item">
+                    <a href="#" class="
+                flex
+                flex-col
+                h-40 w-50
+                bg-[#d9d9d9]  
+                rounded-2xl 
+                p-6 m-4
+                justify-center
+                items-center
+                text-md text-[#0a0a0a]
+                gap-2 
+                transition-all
+                hover:bg-[#cbff58]
+                hover:scale-105
+                "><span class="material-symbols-outlined text" style="font-size: 3rem;">shopping_cart</span>
+                        Loja
+                    </a>
+                </div>
+
+                <div id="action_item">
+                    <a href="#" class="
+                flex
+                flex-col
+                h-40 w-50
+                bg-[#d9d9d9]  
+                rounded-2xl 
+                p-6 m-4
+                justify-center
+                items-center
+                text-md text-[#0a0a0a]
+                gap-2 
+                transition-all
+                hover:bg-[#cbff58]
+                hover:scale-105
+                "><span class="material-symbols-outlined text" style="font-size: 3rem;">social_leaderboard</span>
+                        Ranking
+                    </a>
+                </div>
+
+                <div id="admin_panel_btn" class="hidden">
+                    <a href="#" class="
+                flex
+                flex-col
+                h-40 w-50
+                bg-red-400/30
+                border-2
+                border-red-500/80  
+                rounded-2xl 
+                p-6 m-4
+                justify-center
+                items-center
+                text-md text-red-500
+                gap-2 
+                transition-all
+                hover:bg-red-400/50 
+                hover:scale-105
+                "><span class="material-symbols-outlined text" style="font-size: 3rem;">admin_panel_settings</span>
+                        Painel Admin
+                    </a>
+                </div>
+
+                <div id="coletech_validate" class="hidden">
+                    <a href="#" class="
+                flex
+                flex-col
+                h-40 w-50
+                bg-yellow-400/30
+                border-2
+                border-yellow-500/80  
+                rounded-2xl 
+                p-6 m-4
+                justify-center
+                items-center
+                text-md text-yellow-500
+                gap-2 
+                transition-all
+                hover:bg-yellow-400/50 
+                hover:scale-105
+                "><span class="material-symbols-outlined text" style="font-size: 3rem;">hourglass_check</span>
+                        Validar Descarte
+                    </a>
+                </div>
+
+                <div id="resgate_validate" class="hidden">
+                    <a href="#" class="
+                flex
+                flex-col
+                h-40 w-50
+                bg-yellow-400/30
+                border-2
+                border-yellow-500/80  
+                rounded-2xl 
+                p-6 m-4
+                justify-center
+                items-center
+                text-md text-yellow-500
+                gap-2 
+                transition-all
+                hover:bg-yellow-400/50 
+                hover:scale-105
+                "><span class="material-symbols-outlined text" style="font-size: 3rem;">request_quote</span>
+                        Validar Resgate
+                    </a>
                 </div>
 
             </div>
         </section>
 
     </main>
-    <script src="home.js"></script>    
+    <footer>
+        <div id="dev" class="flex flex-col items-center justify-center mt-15">
+            <p class="text-white font-semibold">DTech©2025</p>
+            <p class="text-white">Desenvolvido por: <a href="github.com/yvitall" class="text-[#cbff58]">Yuri Vital</a>, <a href="#" class="text-[#cbff58]">Sophia Ramara</a>, <a href="https://www.linkedin.com/in/marqgustavo" class="text-[#cbff58]">Gustavo Marques</a> & <span class="text-[#cbff58]">Gabriel Costa</span></p>
+        </div>
+    </footer>
+    <script src="home.js"></script>
+    <script src="saldo.js"></script>
 </body>
 
 </html>
