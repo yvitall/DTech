@@ -11,8 +11,8 @@ document.getElementById('formCadastro').addEventListener('submit', function(e) {
     const emailEmpresa = document.getElementById('emailEmpresa').value.trim();
     const senha = document.getElementById('senha').value;
     const confirmaSenha = document.getElementById('confirmaSenha').value;
-    const perguntaRecuperacao = document.getElementById('perguntaRecuperacao').value;
-    const respostaPergunta = document.getElementById('respostaPergunta').value.trim();
+    const endereco = document.getElementById('endereco').value;
+    
     
     // Validações
     if (razaoSocial.length < 3) {
@@ -35,19 +35,11 @@ document.getElementById('formCadastro').addEventListener('submit', function(e) {
         return;
     }
     
-    if (!perguntaRecuperacao) {
-        mostrarErro('Selecione uma pergunta de segurança');
-        return;
-    }
-    
-    if (respostaPergunta.length < 2) {
-        mostrarErro('Resposta da pergunta deve ter pelo menos 2 caracteres');
-        return;
-    }
-    
     // Verifica se o email já está cadastrado
     const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-    const emailExiste = usuarios.find(user => user.emailEmpresa === emailEmpresa);
+    const emailExiste = usuarios.find(user => 
+    (user.email === emailEmpresa) || (user.emailEmpresa === emailEmpresa)
+);
     
     if (emailExiste) {
         mostrarErro('Este email já está cadastrado');
@@ -60,8 +52,8 @@ document.getElementById('formCadastro').addEventListener('submit', function(e) {
         emailEmpresa: emailEmpresa,
         senha: senha,
         cargo: 'Parceiro',
-        perguntaRecuperacao: perguntaRecuperacao,
-        respostaRecuperacao: respostaPergunta.toLowerCase() // Salva em minúsculo para facilitar comparação
+        saldo: 0,
+        endereco: endereco
     };
     
     // Adiciona o novo usuário ao array

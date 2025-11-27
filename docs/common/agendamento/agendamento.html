@@ -9,47 +9,26 @@
     <link rel="shortcut icon" href="../../assets/favicon_io/favicon.ico" type="image/dtech-icon">
 
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
 </head>
 
 <body class="flex flex-col bg-[#0A0A0A] font-['Space_Grotesk'] text-white min-h-screen">
 
-    <header class="relative flex bg-[#0A0A0A] w-full h-auto py-4 px-15 z-30">
+    <header class="relative flex bg-[#0A0A0A] w-full h-auto py-4 px-15 z-30 border-b border-white/10">
         <div id="fix_nav" class="flex items-center justify-between w-full">
             <div id="menu_hamb">
                 <button id="btnMenuHamb">
-                    <span
-                        class="material-symbols-outlined text-white hover:text-[#cbff58] cursor-pointer transition-all hover:rotate-180"
-                        style="font-size: 2rem;">
-                        menu
-                    </span>
+                    <span class="material-symbols-outlined text-white hover:text-[#cbff58] cursor-pointer transition-all hover:rotate-180" style="font-size: 2rem;">menu</span>
                 </button>
             </div>
 
             <img src="../../assets/logo-png/DTECH-1GW.png" alt="logo-dtech" class="h-8 ml-auto mr-auto pl-55">
 
             <div id="actions_header" class="flex items-center justify-center">
-                <p id="user_account" class="text-white text-md mr-5"></p>
+                <p id="user_account" class="text-white text-md mr-5">Olá, Usuário</p>
                 <div id="logout">
-                    <a href="../../index.html" class="
-                        flex
-                        items-center
-                        px-5
-                        py-2
-                        bg-red-400/30
-                        border-2
-                        border-red-400/50
-                        text-red-500/80
-                        rounded-xl
-                        hover:bg-red-400/50
-                        transition-all
-                    ">
+                    <a href="../../index.html" class="flex items-center px-5 py-2 bg-red-400/30 border-2 border-red-400/50 text-red-500/80 rounded-xl hover:bg-red-400/50 transition-all">
                         <span class="material-symbols-outlined mr-1">logout</span>
                         Sair
                     </a>
@@ -58,305 +37,123 @@
         </div>
     </header>
 
-    <!-- Menu Hambúrguer Lateral -->
-    <div id="menuLateral"
-        class="fixed top-0 left-0 h-full w-80 bg-[#0A0A0A] border-r-2 border-[#cbff58]/30 transform -translate-x-full transition-transform duration-300 ease-in-out z-40 shadow-2xl shadow-[#cbff58]/20">
+    <div id="menuLateral" class="fixed top-0 left-0 h-full w-80 bg-[#0A0A0A] border-r-2 border-[#cbff58]/30 transform -translate-x-full transition-transform duration-300 ease-in-out z-40 shadow-2xl shadow-[#cbff58]/20">
         <div class="flex flex-col h-full">
-            <!-- Cabeçalho do Menu -->
             <div class="flex items-center justify-between p-6 border-b border-white/20">
                 <button id="btnFecharMenu">
-                    <span
-                        class="material-symbols-outlined text-white hover:text-[#cbff58] cursor-pointer transition-all hover:rotate-90"
-                        style="font-size: 1rem;">
-                        close
-                    </span>
+                    <span class="material-symbols-outlined text-white hover:text-[#cbff58] cursor-pointer transition-all hover:rotate-90" style="font-size: 2rem;">close</span>
                 </button>
             </div>
 
-            <!-- Itens do Menu -->
             <nav class="flex-1 overflow-y-auto py-4">
                 <ul class="space-y-2 px-4">
-                    <!-- Opções Comuns -->
-                    <li>
-                        <a href="../home/home-ini.html"
-                            class="flex items-center gap-4 px-4 py-3 text-white hover:bg-[#cbff58]/20 hover:text-[#cbff58] rounded-xl transition-all group">
-                            <span class="material-symbols-outlined" style="font-size: 1.5rem;">home</span>
-                            <span class="font-medium">Home</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../agendamento/agendamento.html"
-                            class="flex items-center gap-4 px-4 py-3 text-white hover:bg-[#cbff58]/20 hover:text-[#cbff58] rounded-xl transition-all group">
-                            <span class="material-symbols-outlined" style="font-size: 1.5rem;">calendar_month</span>
-                            <span class="font-medium">Agendamento</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../loja/loja.html"
-                            class="flex items-center gap-4 px-4 py-3 text-white hover:bg-[#cbff58]/20 hover:text-[#cbff58] rounded-xl transition-all group">
-                            <span class="material-symbols-outlined" style="font-size: 1.5rem;">shopping_cart</span>
-                            <span class="font-medium">Loja</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../historico/historico.html"
-                            class="flex items-center gap-4 px-4 py-3 text-white hover:bg-[#cbff58]/20 hover:text-[#cbff58] rounded-xl transition-all group">
-                            <span class="material-symbols-outlined" style="font-size: 1.5rem;">sync_alt</span>
-                            <span class="font-medium">Histórico</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../ranking/ranking.html"
-                            class="flex items-center gap-4 px-4 py-3 text-white hover:bg-[#cbff58]/20 hover:text-[#cbff58] rounded-xl transition-all group">
-                            <span class="material-symbols-outlined" style="font-size: 1.5rem;">social_leaderboard</span>
-                            <span class="font-medium">Ranking</span>
-                        </a>
-                    </li>
-
-                    <!-- Divisor -->
-                    <li class="py-2">
-                        <div class="border-t border-white/20"></div>
-                    </li>
-
-                    <!-- Opções para Parceiro -->
-                    <li id="menu-validacao-resgate" class="hidden">
-                        <a href="../validacao-resgate/validacao-resgate.html"
-                            class="flex items-center gap-4 px-4 py-3 text-yellow-400 hover:bg-yellow-400/20 hover:text-yellow-300 rounded-xl transition-all group">
-                            <span class="material-symbols-outlined" style="font-size: 1.5rem;">request_quote</span>
-                            <span class="font-medium">Validar Resgate</span>
-                        </a>
-                    </li>
-                    <li id="menu-cadastrar-produto" class="hidden">
-                        <a href="../cadastrar-produto/cadastrar-produto.html"
-                            class="flex items-center gap-4 px-4 py-3 text-yellow-400 hover:bg-yellow-400/20 hover:text-yellow-300 rounded-xl transition-all group">
-                            <span class="material-symbols-outlined" style="font-size: 1.5rem;">add_shopping_cart</span>
-                            <span class="font-medium">Cadastrar Produto</span>
-                        </a>
-                    </li>
-
-                    <!-- Opções para Coletech -->
-                    <li id="menu-validacao-descarte" class="hidden">
-                        <a href="../validacao-descarte/validacao-descarte.html"
-                            class="flex items-center gap-4 px-4 py-3 text-yellow-400 hover:bg-yellow-400/20 hover:text-yellow-300 rounded-xl transition-all group">
-                            <span class="material-symbols-outlined" style="font-size: 1.5rem;">verified</span>
-                            <span class="font-medium">Validar Descarte</span>
-                        </a>
-                    </li>
-
-                    <!-- Opções para Admin -->
-                    <li id="menu-painel-admin" class="hidden">
-                        <a href="../admin/admin.html"
-                            class="flex items-center gap-4 px-4 py-3 text-red-400 hover:bg-red-400/20 hover:text-red-300 rounded-xl transition-all group">
-                            <span class="material-symbols-outlined"
-                                style="font-size: 1.5rem;">admin_panel_settings</span>
-                            <span class="font-medium">Painel Admin</span>
-                        </a>
-                    </li>
+                    <li><a href="../home/home-ini.html" class="flex items-center gap-4 px-4 py-3 text-white hover:bg-[#cbff58]/20 hover:text-[#cbff58] rounded-xl transition-all"><span class="material-symbols-outlined">home</span>Home</a></li>
+                    <li><a href="../agendamento/agendamento.html" class="flex items-center gap-4 px-4 py-3 text-[#cbff58] bg-[#cbff58]/10 rounded-xl transition-all"><span class="material-symbols-outlined">calendar_month</span>Agendamento</a></li>
+                    <li><a href="../loja/loja.html" class="flex items-center gap-4 px-4 py-3 text-white hover:bg-[#cbff58]/20 hover:text-[#cbff58] rounded-xl transition-all"><span class="material-symbols-outlined">shopping_cart</span>Loja</a></li>
+                    <li><a href="../historico/historico.html" class="flex items-center gap-4 px-4 py-3 text-white hover:bg-[#cbff58]/20 hover:text-[#cbff58] rounded-xl transition-all"><span class="material-symbols-outlined">sync_alt</span>Histórico</a></li>
+                    <li><a href="../ranking/ranking.html" class="flex items-center gap-4 px-4 py-3 text-white hover:bg-[#cbff58]/20 hover:text-[#cbff58] rounded-xl transition-all"><span class="material-symbols-outlined">social_leaderboard</span>Ranking</a></li>
+                    
+                    <li class="py-2"><div class="border-t border-white/20"></div></li>
+                    <li id="menu-validacao-resgate" class="hidden"><a href="../validacao-resgate/validacao-resgate.html" class="flex items-center gap-4 px-4 py-3 text-yellow-400 hover:bg-yellow-400/20 rounded-xl"><span class="material-symbols-outlined">request_quote</span>Validar Resgate</a></li>
+                    <li id="menu-cadastrar-produto" class="hidden"><a href="../cadastrar-produto/cadastrar-produto.html" class="flex items-center gap-4 px-4 py-3 text-yellow-400 hover:bg-yellow-400/20 rounded-xl"><span class="material-symbols-outlined">add_shopping_cart</span>Cadastrar Produto</a></li>
+                    <li id="menu-validacao-descarte" class="hidden"><a href="../validacao-descarte/validacao-descarte.html" class="flex items-center gap-4 px-4 py-3 text-yellow-400 hover:bg-yellow-400/20 rounded-xl"><span class="material-symbols-outlined">verified</span>Validar Descarte</a></li>
+                    <li id="menu-painel-admin" class="hidden"><a href="../admin/admin.html" class="flex items-center gap-4 px-4 py-3 text-red-400 hover:bg-red-400/20 rounded-xl"><span class="material-symbols-outlined">admin_panel_settings</span>Painel Admin</a></li>
                 </ul>
             </nav>
 
-            <!-- Rodapé do Menu -->
             <div class="p-4 border-t border-white/20">
                 <div class="bg-white/5 rounded-xl p-4 mb-3">
                     <p class="text-white/70 text-sm mb-1">Tipo de Conta:</p>
-                    <p id="tipoUsuarioMenu" class="text-[#cbff58] font-bold text-lg"></p>
+                    <p id="tipoUsuarioMenu" class="text-[#cbff58] font-bold text-lg">Carregando...</p>
                 </div>
-                <a href="../../index.html"
-                    class="flex items-center justify-center gap-2 w-full py-3 bg-red-400/30 border-2 border-red-400/50 text-red-500/80 rounded-xl hover:bg-red-400/50 transition-all font-semibold">
-                    <span class="material-symbols-outlined">logout</span>
-                    Sair da Conta
-                </a>
             </div>
         </div>
     </div>
+    <div id="menuOverlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-35 hidden transition-opacity duration-300"></div>
 
-    <!-- Overlay do Menu -->
-    <div id="menuOverlay"
-        class="fixed inset-0 bg-black/60 backdrop-blur-sm z-35 hidden transition-opacity duration-300"></div>
+    <main class="flex flex-col mt-8 py-5 px-4 md:px-15 flex-1 items-center">
+        <h1 class="text-4xl md:text-5xl text-white font-semibold cursor-default mb-4 text-center">Preencha os Dados</h1>
+        <p class="text-white/70 text-lg mb-10 text-center">Agende o descarte dos seus resíduos eletrônicos</p>
 
-    <main class="flex flex-col mt-8 py-5 px-15 flex-1">
-
-        <section id="agendamento" class="flex flex-col items-center">
-            <h1 class="text-5xl text-white font-semibold cursor-default mb-8">Preencha os Dados</h1>
-            <p class="text-white/70 text-lg mb-10">Preencha os dados abaixo para realizar um agendamento</p>
-
-            <div class="flex gap-10 w-full max-w-6xl">
-                <!-- Formulário -->
-                <div class="flex-1 bg-white/5 backdrop-blur-xl border-2 border-white/30 rounded-3xl p-8">
-                    <form id="formAgendamento" class="space-y-6">
-
-                        <!-- Nome -->
-                        <div>
-                            <label for="nome" class="block text-sm font-medium text-white/80 mb-2">
-                                Digite seu Nome
-                            </label>
-                            <input type="text" id="nome" placeholder="Seu nome completo" required
-                                class="w-full px-4 py-3 bg-white/5 border-2 border-white/30 rounded-xl text-white placeholder:text-white/50 focus:outline-none focus:border-[#cbff58] focus:ring-2 focus:ring-[#cbff58]/30 transition-all">
-                        </div>
-
-                        <!-- Curso -->
-                        <div>
-                            <label for="curso" class="block text-sm font-medium text-white/80 mb-2">
-                                Curso
-                            </label>
-                            <input type="text" id="curso" placeholder="Seu curso" required
-                                class="w-full px-4 py-3 bg-white/5 border-2 border-white/30 rounded-xl text-white placeholder:text-white/50 focus:outline-none focus:border-[#cbff58] focus:ring-2 focus:ring-[#cbff58]/30 transition-all">
-                        </div>
-
-                        <!-- Data e Hora -->
-                        <div class="grid grid-cols-2 gap-4">
-                            <div>
-                                <label for="data" class="block text-sm font-medium text-white/80 mb-2">
-                                    Data de Descarte
-                                </label>
-                                <input type="date" id="data" required
-                                    class="w-full px-4 py-3 bg-white/5 border-2 border-white/30 rounded-xl text-white focus:outline-none focus:border-[#cbff58] focus:ring-2 focus:ring-[#cbff58]/30 transition-all">
-                            </div>
-                            <div>
-                                <label for="hora" class="block text-sm font-medium text-white/80 mb-2">
-                                    Hora
-                                </label>
-                                <input type="time" id="hora" required
-                                    class="w-full px-4 py-3 bg-white/5 border-2 border-white/30 rounded-xl text-white focus:outline-none focus:border-[#cbff58] focus:ring-2 focus:ring-[#cbff58]/30 transition-all">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-
-                <!-- Seleção de Componentes -->
-                <div class="flex-1 bg-white/5 backdrop-blur-xl border-2 border-white/30 rounded-3xl p-8">
-                    <h3 class="text-2xl font-semibold mb-6">
-                        Selecione os <span class="text-[#cbff58]">Componentes Eletrônicos</span> que serão descartados
-                    </h3>
-
-                    <div id="componentesContainer" class="space-y-3">
-                        <!-- Checkboxes padrão -->
-                        <label class="flex items-center gap-3 cursor-pointer group">
-                            <input type="checkbox" name="componente" value="Pilhas/Baterias"
-                                class="w-5 h-5 accent-[#cbff58] cursor-pointer focus:ring-2 focus:ring-[#cbff58]/50">
-                            <span class="text-white group-hover:text-[#cbff58] transition-colors">Pilhas/Baterias</span>
-                        </label>
-
-                        <label class="flex items-center gap-3 cursor-pointer group">
-                            <input type="checkbox" name="componente" value="Placas Eletrônicas"
-                                class="w-5 h-5 accent-[#cbff58] cursor-pointer focus:ring-2 focus:ring-[#cbff58]/50">
-                            <span class="text-white group-hover:text-[#cbff58] transition-colors">Placas
-                                Eletrônicas</span>
-                        </label>
-
-                        <label class="flex items-center gap-3 cursor-pointer group">
-                            <input type="checkbox" name="componente" value="Celulares/Tablets"
-                                class="w-5 h-5 accent-[#cbff58] cursor-pointer focus:ring-2 focus:ring-[#cbff58]/50">
-                            <span
-                                class="text-white group-hover:text-[#cbff58] transition-colors">Celulares/Tablets</span>
-                        </label>
-
-                        <label class="flex items-center gap-3 cursor-pointer group">
-                            <input type="checkbox" name="componente" value="Computadores/Notebooks"
-                                class="w-5 h-5 accent-[#cbff58] cursor-pointer focus:ring-2 focus:ring-[#cbff58]/50">
-                            <span
-                                class="text-white group-hover:text-[#cbff58] transition-colors">Computadores/Notebooks</span>
-                        </label>
-
-                        <label class="flex items-center gap-3 cursor-pointer group">
-                            <input type="checkbox" name="componente" value="Teclados/Mouses"
-                                class="w-5 h-5 accent-[#cbff58] cursor-pointer focus:ring-2 focus:ring-[#cbff58]/50">
-                            <span class="text-white group-hover:text-[#cbff58] transition-colors">Teclados/Mouses</span>
-                        </label>
-
-                        <label class="flex items-center gap-3 cursor-pointer group">
-                            <input type="checkbox" name="componente" value="Cabos"
-                                class="w-5 h-5 accent-[#cbff58] cursor-pointer focus:ring-2 focus:ring-[#cbff58]/50">
-                            <span class="text-white group-hover:text-[#cbff58] transition-colors">Cabos</span>
-                        </label>
+        <div class="flex flex-col lg:flex-row gap-10 w-full max-w-6xl">
+            
+            <div class="flex-1 bg-white/5 backdrop-blur-xl border-2 border-white/30 rounded-3xl p-6 md:p-8">
+                <form id="formAgendamento" class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium text-white/80 mb-2">Seu Nome</label>
+                        <input type="text" id="nome" readonly class="w-full px-4 py-3 bg-white/5 border border-white/30 rounded-xl text-white/50 cursor-not-allowed focus:outline-none">
                     </div>
 
-                    <!-- Campo "Outro" -->
-                    <div class="mt-6">
-                        <label for="outro" class="block text-sm font-medium text-white/80 mb-2">
-                            Outro (especifique)
-                        </label>
-                        <input type="text" id="outro" placeholder="Digite outro componente"
-                            class="w-full px-4 py-3 bg-white/5 border-2 border-white/30 rounded-xl text-white placeholder:text-white/50 focus:outline-none focus:border-[#cbff58] focus:ring-2 focus:ring-[#cbff58]/30 transition-all">
+                    <div>
+                        <label class="block text-sm font-medium text-white/80 mb-2">Curso / Setor</label>
+                        <input type="text" id="curso" placeholder="Ex: Análise de Sistemas" required class="w-full px-4 py-3 bg-white/5 border-2 border-white/30 rounded-xl text-white focus:border-[#cbff58] transition-all outline-none">
                     </div>
 
-                    <!-- Botão Agendar -->
-                    <button type="button" id="btnAgendar"
-                        class="w-full mt-8 py-4 bg-[#cbff58] text-black font-bold text-lg rounded-xl hover:bg-[#cbff58]/90 active:scale-95 transition-all flex items-center justify-center gap-2">
-                        <span class="material-symbols-outlined">calendar_month</span>
-                        AGENDAR
-                    </button>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-white/80 mb-2">Data</label>
+                            <input type="date" id="data" required class="w-full px-4 py-3 bg-white/5 border-2 border-white/30 rounded-xl text-white focus:border-[#cbff58] outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-white/80 mb-2">Hora</label>
+                            <input type="time" id="hora" required class="w-full px-4 py-3 bg-white/5 border-2 border-white/30 rounded-xl text-white focus:border-[#cbff58] outline-none">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="flex-1 bg-white/5 backdrop-blur-xl border-2 border-white/30 rounded-3xl p-6 md:p-8">
+                <h3 class="text-2xl font-semibold mb-6">Selecione os <span class="text-[#cbff58]">Componentes</span></h3>
+
+                <div id="componentesContainer" class="space-y-3">
+                    <label class="flex items-center gap-3 cursor-pointer group">
+                        <input type="checkbox" name="componente" value="Pilhas/Baterias" class="w-5 h-5 accent-[#cbff58]">
+                        <span class="group-hover:text-[#cbff58] transition-colors">Pilhas/Baterias</span>
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer group">
+                        <input type="checkbox" name="componente" value="Placas Eletrônicas" class="w-5 h-5 accent-[#cbff58]">
+                        <span class="group-hover:text-[#cbff58] transition-colors">Placas Eletrônicas</span>
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer group">
+                        <input type="checkbox" name="componente" value="Computadores/Periféricos" class="w-5 h-5 accent-[#cbff58]">
+                        <span class="group-hover:text-[#cbff58] transition-colors">Computadores/Periféricos</span>
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer group">
+                        <input type="checkbox" name="componente" value="Cabos/Fios" class="w-5 h-5 accent-[#cbff58]">
+                        <span class="group-hover:text-[#cbff58] transition-colors">Cabos/Fios</span>
+                    </label>
                 </div>
-            </div>
 
-            <!-- Ícone decorativo -->
-            <div class="mt-20 relative">
-                <div class="absolute inset-0 bg-[#cbff58] blur-3xl opacity-30"></div>
-                <span class="material-symbols-outlined relative text-[#cbff58]" style="font-size: 10rem;">
-                    calendar_month
-                </span>
-            </div>
-        </section>
+                <div class="mt-6">
+                    <label class="block text-sm font-medium text-white/80 mb-2">Outro (especifique)</label>
+                    <input type="text" id="outro" placeholder="Digite e clique fora" class="w-full px-4 py-3 bg-white/5 border-2 border-white/30 rounded-xl text-white focus:border-[#cbff58] outline-none transition-all">
+                </div>
 
+                <button type="button" id="btnAgendar" class="w-full mt-8 py-4 bg-[#cbff58] text-black font-bold text-lg rounded-xl hover:bg-[#cbff58]/90 active:scale-95 transition-all flex items-center justify-center gap-2">
+                    <span class="material-symbols-outlined">calendar_month</span>
+                    CONFIRMAR AGENDAMENTO
+                </button>
+            </div>
+        </div>
     </main>
 
-    <!-- Modal de Confirmação -->
-    <div id="modalConfirmacao"
-        class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+    <div id="modalConfirmacao" class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
         <div class="bg-[#0A0A0A] border-2 border-[#cbff58] rounded-3xl p-8 max-w-md w-full relative animate-bounce-in">
-            <!-- Botão fechar -->
-            <button id="btnFecharModal" class="absolute top-4 right-4 text-white/70 hover:text-white transition-colors">
-                <span class="material-symbols-outlined" style="font-size: 2rem;">close</span>
-            </button>
-
-            <!-- Ícone de sucesso -->
-            <div class="flex justify-center mb-6">
-                <div class="bg-[#cbff58] rounded-full p-4">
-                    <span class="material-symbols-outlined text-[#0A0A0A]" style="font-size: 4rem;">check_circle</span>
-                </div>
-            </div>
-
-            <!-- Conteúdo -->
+            <button id="btnFecharModal" class="absolute top-4 right-4 text-white/70 hover:text-white"><span class="material-symbols-outlined text-2xl">close</span></button>
+            <div class="flex justify-center mb-6"><div class="bg-[#cbff58] rounded-full p-4"><span class="material-symbols-outlined text-[#0A0A0A] text-6xl">check_circle</span></div></div>
             <h2 class="text-3xl font-bold text-center mb-4">Agendamento Confirmado!</h2>
-
+            
             <div class="bg-white/5 border border-white/30 rounded-xl p-6 space-y-3 mb-6">
-                <div class="flex justify-between">
-                    <span class="text-white/70">ID do Agendamento:</span>
-                    <span id="modalId" class="font-bold text-[#cbff58]"></span>
-                </div>
-                <div class="flex justify-between">
-                    <span class="text-white/70">Data:</span>
-                    <span id="modalData" class="font-semibold"></span>
-                </div>
-                <div class="flex justify-between">
-                    <span class="text-white/70">Hora:</span>
-                    <span id="modalHora" class="font-semibold"></span>
-                </div>
+                <div class="flex justify-between"><span class="text-white/70">ID:</span><span id="modalId" class="font-bold text-[#cbff58]"></span></div>
+                <div class="flex justify-between"><span class="text-white/70">Data:</span><span id="modalData" class="font-semibold"></span></div>
+                <div class="flex justify-between"><span class="text-white/70">Hora:</span><span id="modalHora" class="font-semibold"></span></div>
             </div>
 
-            <div class="bg-[#cbff58]/10 border border-[#cbff58]/30 rounded-xl p-4 text-center mb-6">
-                <p class="text-lg font-semibold mb-2">Atente-se e não perca a data!</p>
-                <p class="text-[#cbff58] text-xl font-bold">Seus EsudaCoins estão aguardando você!</p>
-            </div>
-
-            <button id="btnEntendi"
-                class="w-full py-3 bg-[#cbff58] text-black font-bold rounded-xl hover:bg-[#cbff58]/90 active:scale-95 transition-all">
-                Entendi!
-            </button>
+            <p class="text-center text-[#cbff58] font-bold mb-6">Aguarde a validação no ponto de coleta!</p>
+            <button id="btnEntendi" class="w-full py-3 bg-[#cbff58] text-black font-bold rounded-xl hover:bg-[#cbff58]/90 active:scale-95 transition-all">Entendi!</button>
         </div>
     </div>
 
-    <footer>
-        <div id="dev" class="flex flex-col items-center justify-center mt-15 mb-5">
-            <p class="text-white font-semibold">DTech©2025</p>
-            <p class="text-white">Desenvolvido por: <a href="github.com/yvitall" class="text-[#cbff58]">Yuri Vital</a>,
-                <a href="#" class="text-[#cbff58]">Sophia Ramara</a>, <a href="https://www.linkedin.com/in/marqgustavo"
-                    class="text-[#cbff58]">Gustavo Marques</a> & <span class="text-[#cbff58]">Gabriel Costa</span>
-            </p>
-        </div>
-    </footer>
     <script src="agendamento.js"></script>
-    <script src="menu.js"></script>
 </body>
-
 </html>

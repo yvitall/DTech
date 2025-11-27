@@ -47,7 +47,9 @@ document.getElementById('formCadastro').addEventListener('submit', function(e) {
     
     // Verifica se o email já está cadastrado
     const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-    const emailExiste = usuarios.find(user => user.email === emailInstitucional);
+    const emailExiste = usuarios.find(user => 
+    (user.email === emailInstitucional) || (user.emailEmpresa === emailInstitucional)
+);
     
     if (emailExiste) {
         mostrarErro('Este email já está cadastrado');
@@ -61,7 +63,8 @@ document.getElementById('formCadastro').addEventListener('submit', function(e) {
         senha: senha,
         cargo: 'DescarTech',
         perguntaRecuperacao: perguntaRecuperacao,
-        respostaRecuperacao: respostaPergunta.toLowerCase() // Salva em minúsculo para facilitar comparação
+        respostaRecuperacao: respostaPergunta.toLowerCase(), // Salva em minúsculo para facilitar comparação
+        saldo: 0
     };
     
     // Adiciona o novo usuário ao array
