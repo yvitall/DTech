@@ -203,8 +203,6 @@ function configurarBotaoConfirmar() {
         confirmarValidacao();
     });
 }
-
-// ========== CONFIRMAR VALIDAÇÃO (COMPLETAMENTE CORRIGIDO) ==========
 function confirmarValidacao() {
     console.log('\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
     console.log('🚀 INICIANDO VALIDAÇÃO DE DESCARTE');
@@ -223,7 +221,6 @@ function confirmarValidacao() {
         return;
     }
 
-    // ========== VALIDAÇÕES INICIAIS ==========
     const emailDescarTech = agendamentoSelecionado.usuarioEmail || agendamentoSelecionado.userEmail;
     
     if (!emailDescarTech) {
@@ -261,11 +258,19 @@ function confirmarValidacao() {
     }
 
     // ========== CREDITAR PONTOS ==========
-    console.log('\n💳 Iniciando créditos...');
-    
-    // 1. Creditar para o DescarTech (dono do lixo)
-    console.log(`\n1️⃣ Creditando para DescarTech (${emailDescarTech})...`);
-    const sucessoDescarTech = window.creditarPontos(emailDescarTech, pontosDescarTech);
+// ========== CREDITAR PONTOS ==========
+console.log('\n💳 Iniciando créditos...');
+
+if (typeof window.creditarPontos !== 'function') {
+    console.error('❌ A função creditarPontos (de saldo.js) não está disponível!');
+    alert('❌ Erro de Sistema: Função de crédito não encontrada. Verifique o saldo.js.');
+    return;
+}
+
+// 1. Creditar para o DescarTech (dono do lixo)
+console.log(`\n1️⃣ Creditando para DescarTech (${emailDescarTech})...`);
+const sucessoDescarTech = window.creditarPontos(emailDescarTech, pontosDescarTech);
+// ... (restante do código)
     
     if (!sucessoDescarTech) {
         console.error('❌ Falha ao creditar para DescarTech');
