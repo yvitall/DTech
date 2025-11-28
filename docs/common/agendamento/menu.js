@@ -51,6 +51,9 @@ document.addEventListener('DOMContentLoaded', function() {
         switch (usuario.cargo) {
             case 'Admin':
                 if(menuAdmin) menuAdmin.classList.remove('hidden');
+                if(menuColetech) menuColetech.classList.remove('hidden');
+                if(menuResgate) menuResgate.classList.remove('hidden');
+                if(menuProduto) menuProduto.classList.remove('hidden');
                 break;
             
             case 'ColeTech':

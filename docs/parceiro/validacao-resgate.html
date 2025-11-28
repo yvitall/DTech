@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Validação Descarte | DTech</title>
+    <title>Validação Resgate | DTech</title>
 
     <link rel="shortcut icon" href="../assets/favicon_io/favicon.ico" type="image/dtech-icon">
 
@@ -116,7 +116,7 @@
 
                                 <!-- Opções para Coletech -->
                                 <li id="menu-validacao-descarte" class="hidden">
-                                    <a href="validacao-descarte.html"
+                                    <a href="../coletech/validacao-descarte.html"
                                         class="flex items-center gap-4 px-4 py-3 text-yellow-400 hover:bg-yellow-400/20 hover:text-yellow-300 rounded-xl transition-all group">
                                         <span class="material-symbols-outlined"
                                             style="font-size: 1.5rem;">verified</span>
@@ -160,7 +160,7 @@
                     <p id="user_account" class="text-white text-md mr-5">
                     </p>
                     <div id="logout">
-                        <a href="../index.html" class="
+                        <a href="../../index.html" class="
                 flex
                 items-center
                 px-5
@@ -183,16 +183,16 @@
         
         <section>
             <div class="flex items-center gap-3 mb-6">
-                <span class="material-symbols-outlined text-yellow-400 text-3xl">pending_actions</span>
-                <h2 class="text-3xl font-bold uppercase tracking-wide">Descartes Pendentes</h2>
+                <span class="material-symbols-outlined text-yellow-400 text-3xl">shopping_cart_checkout</span>
+                <h2 class="text-3xl font-bold uppercase tracking-wide">Resgates Pendentes</h2>
             </div>
 
             <div id="gridPendentes" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 </div>
             
             <div id="msgVazioPendentes" class="hidden flex flex-col items-center justify-center py-10 text-white/30 border-2 border-dashed border-white/10 rounded-2xl">
-                <span class="material-symbols-outlined text-5xl mb-2">check_circle</span>
-                <p>Nenhum descarte pendente no momento.</p>
+                <span class="material-symbols-outlined text-5xl mb-2">remove_shopping_cart</span>
+                <p>Nenhum pedido de resgate pendente.</p>
             </div>
         </section>
 
@@ -200,8 +200,8 @@
 
         <section>
             <div class="flex items-center gap-3 mb-6">
-                <span class="material-symbols-outlined text-[#cbff58] text-3xl">task_alt</span>
-                <h2 class="text-3xl font-bold uppercase tracking-wide text-white/80">Descartes Concluídos</h2>
+                <span class="material-symbols-outlined text-[#cbff58] text-3xl">fact_check</span>
+                <h2 class="text-3xl font-bold uppercase tracking-wide text-white/80">Entregas Concluídas</h2>
             </div>
 
             <div id="gridConcluidos" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 opacity-80">
@@ -216,104 +216,50 @@
                 <span class="material-symbols-outlined">close</span>
             </button>
 
-            <div class="mb-6">
-                <p class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-1" id="valIdAgendamento">ID: #0000</p>
-                <h2 class="text-2xl font-bold leading-tight" id="valNomeUsuario">Nome do Usuário</h2>
-                <p class="text-sm text-gray-600" id="valCurso">Curso do Usuário</p>
+            <div class="mb-4">
+                <p class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-1" id="valIdResgate">ID: #0000</p>
+                <h2 class="text-2xl font-bold leading-tight" id="valNomeUsuario">Nome do Cliente</h2>
+                <p class="text-sm text-gray-600 mb-4">Solicitou a retirada de:</p>
             </div>
 
-            <div class="bg-white rounded-xl p-4 mb-6 shadow-sm">
-                <h3 class="font-bold mb-2 text-sm uppercase text-gray-400">Itens Agendados</h3>
-                <ul id="valListaItens" class="text-sm space-y-1 max-h-32 overflow-y-auto">
-                    </ul>
-            </div>
-
-            <div class="mb-6">
-                <label class="block text-sm font-bold mb-2 uppercase">Peso Total (kg)</label>
-                <div class="flex items-center bg-white border-2 border-gray-300 rounded-xl px-4 py-3 focus-within:border-[#cbff58] transition-colors">
-                    <span class="material-symbols-outlined text-gray-400 mr-2">scale</span>
-                    <input type="number" id="inputPeso" step="0.1" min="0.1" placeholder="0.0" 
-                           class="w-full bg-transparent outline-none font-bold text-xl">
-                    <span class="text-gray-500 font-medium">kg</span>
-                </div>
-                <p class="text-xs text-gray-500 mt-2 text-right">1 kg = <span class="text-green-600 font-bold">10 EC</span></p>
-            </div>
-
-            <div class="flex justify-between items-center bg-[#cbff58]/20 border border-[#cbff58] rounded-xl p-4 mb-6">
-                <span class="font-bold text-green-800">Total a Credit:</span>
-                <div class="text-right">
-                    <span id="previewPontos" class="text-2xl font-black text-green-700">0</span>
-                    <span class="text-xs font-bold text-green-700">EC</span>
+            <div class="bg-white rounded-2xl p-4 mb-6 shadow-sm border border-gray-200">
+                <div class="flex gap-4 items-center">
+                    <div class="w-16 h-16 bg-gray-200 rounded-lg flex items-center justify-center overflow-hidden">
+                        <span class="material-symbols-outlined text-gray-400">inventory_2</span>
+                    </div>
+                    <div>
+                        <h3 id="valNomeProduto" class="font-bold text-lg leading-tight">Nome Produto</h3>
+                        <p class="text-[#cbff58] font-black text-sm bg-black px-2 py-0.5 rounded mt-1 w-fit">
+                            EC <span id="valValorProduto">0</span>
+                        </p>
+                    </div>
                 </div>
             </div>
 
-            <button id="btnConfirmarValidacao" class="w-full py-4 bg-[#cbff58] hover:bg-[#bce64d] text-black font-bold text-lg rounded-xl shadow-lg transition-transform active:scale-95 flex items-center justify-center gap-2">
+            <div class="bg-yellow-100 border-l-4 border-yellow-400 p-4 mb-6 rounded-r-lg">
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                        <span class="material-symbols-outlined text-yellow-600">info</span>
+                    </div>
+                    <div class="ml-3">
+                        <p class="text-sm text-yellow-700 font-bold">Atenção Parceiro</p>
+                        <p class="text-xs text-yellow-700 mt-1">
+                            Confirme a identidade do usuário antes de entregar o produto. O saldo já foi descontado.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <button id="btnConfirmarEntrega" class="w-full py-4 bg-[#cbff58] hover:bg-[#bce64d] text-black font-bold text-lg rounded-xl shadow-lg transition-transform active:scale-95 flex items-center justify-center gap-2">
                 <span class="material-symbols-outlined">check_circle</span>
-                Confirmar Validação
+                Confirmar Entrega
             </button>
         </div>
     </div>
 
-    <div id="modalComprovante" class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-        <div class="bg-[#e5e5e5] text-black rounded-[2rem] p-8 max-w-md w-full relative shadow-2xl animate-fade-in border-t-8 border-[#cbff58]">
-            <button onclick="fecharModal('modalComprovante')" class="absolute top-4 right-4 text-black/50 hover:text-black">
-                <span class="material-symbols-outlined">close</span>
-            </button>
-
-            <div class="mb-8">
-                <div class="flex justify-between items-start">
-                    <div>
-                        <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1" id="compId">ID: #0000</p>
-                        <h2 class="text-2xl font-bold" id="compNome">Nome Completo</h2>
-                        <p class="text-sm text-gray-500" id="compCurso">Curso</p>
-                    </div>
-                </div>
-                <div class="mt-4 flex gap-4">
-                    <div>
-                        <p class="text-xs font-bold text-gray-400">Data do Descarte</p>
-                        <p class="font-medium" id="compData">00/00/0000</p>
-                    </div>
-                    <div>
-                        <p class="text-xs font-bold text-gray-400">Horário</p>
-                        <p class="font-medium" id="compHora">00:00</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-xl p-5 mb-6 shadow-sm">
-                <h3 class="font-bold mb-4 text-sm uppercase text-gray-400 border-b pb-2">Resumo da Coleta</h3>
-                
-                <ul id="compListaItens" class="space-y-3 text-sm mb-4">
-                    </ul>
-
-                <div class="flex justify-between items-center pt-3 border-t border-gray-100">
-                    <span class="text-gray-500">Peso Total</span>
-                    <span class="font-bold" id="compPeso">0.0 kg</span>
-                </div>
-                
-                <div class="mt-4 bg-[#cbff58] rounded-lg p-3 flex justify-between items-center">
-                    <span class="font-bold text-green-900">Total Gerado</span>
-                    <span class="font-black text-xl text-green-900" id="compTotalPontos">EC 0</span>
-                </div>
-            </div>
-
-            <div class="flex items-center justify-between">
-                <div>
-                    <p class="font-bold text-lg flex items-center gap-2">
-                        Status da Validação: 
-                        <span class="material-symbols-outlined text-green-600 bg-green-100 rounded-full p-1">check</span>
-                    </p>
-                    <p class="text-xs text-gray-500 mt-1">
-                        Validado & Recebido por: <span id="compValidadoPor" class="font-bold">Nome ColeTech</span>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="validacao-descarte.js"></script>
-    <script src="../common/home/home.js"></script>
+    <script src="validacao-resgate.js"></script>
     <script src="../common/agendamento/menu.js"></script>
-    <script src="../common/home/saldo.js"></script>
+    <script src="../common/loja/loja.js"></script>
+
 </body>
 </html>

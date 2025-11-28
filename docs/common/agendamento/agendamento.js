@@ -34,7 +34,7 @@ function configurarMenu(usuario) {
     
     // Texto do Cargo
     const nomesCargos = {
-        'admin': 'Administrador',
+        'admin': 'Admin',
         'parceiro': 'Parceiro',
         'coletech': 'ColeTech',
         'comum': 'DescarTech'
