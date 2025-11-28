@@ -204,146 +204,149 @@ function configurarBotaoConfirmar() {
     });
 }
 function confirmarValidacao() {
-    console.log('\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
-    console.log('🚀 INICIANDO VALIDAÇÃO DE DESCARTE');
-    console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n');
-    
-    const inputPeso = document.getElementById('inputPeso');
-    const peso = parseFloat(inputPeso?.value || 0);
+    const peso = parseFloat(document.getElementById('inputPeso').value);
     
     if (!peso || peso <= 0) {
-        alert("⚠️ Insira um peso válido!");
+        mostrarModalErro('Peso Inválido', 'Por favor, insira um peso válido.');
         return;
     }
 
     if (!agendamentoSelecionado) {
-        alert("❌ Erro: Nenhum agendamento selecionado!");
+        mostrarModalErro('Erro', 'Nenhum agendamento selecionado.');
         return;
     }
 
-    const emailDescarTech = agendamentoSelecionado.usuarioEmail || agendamentoSelecionado.userEmail;
-    
+    // Obter emails
+    const emailDescarTech = agendamentoSelecionado.usuarioEmail;
+    const emailColeTech = usuarioColeTech.email;
+
     if (!emailDescarTech) {
-        console.error('❌ Email do DescarTech não encontrado no agendamento!');
-        alert('❌ Erro: Email do usuário não encontrado no agendamento!');
+        mostrarModalErro('Erro', 'Email do usuário não encontrado no agendamento.');
         return;
     }
 
-    if (!usuarioColeTech || !usuarioColeTech.email) {
-        console.error('❌ Email do ColeTech não encontrado!');
-        alert('❌ Erro: Dados do ColeTech não encontrados!');
-        return;
-    }
-
-    // ========== LOGS DE IDENTIFICAÇÃO ==========
-    console.log('👤 DescarTech:', agendamentoSelecionado.usuarioNome);
-    console.log('📧 Email DescarTech:', emailDescarTech);
-    console.log('👷 ColeTech logado:', usuarioColeTech.nome);
-    console.log('📧 Email ColeTech:', usuarioColeTech.email);
-    console.log('⚖️ Peso:', peso, 'kg');
-
-    // ========== CÁLCULO DE PONTOS ==========
-    const pontosDescarTech = Math.floor(peso * 10);
-    const comissaoColeTech = 5;
-
-    console.log(`\n💰 DISTRIBUIÇÃO:`);
-    console.log(`   → ${agendamentoSelecionado.usuarioNome} receberá: ${pontosDescarTech} EC`);
-    console.log(`   → ${usuarioColeTech.nome} receberá: ${comissaoColeTech} EC`);
-
-    // ========== VERIFICAÇÃO DE SEGURANÇA ==========
-    if (emailDescarTech.toLowerCase().trim() === usuarioColeTech.email.toLowerCase().trim()) {
-        console.error('🚨 ERRO: DescarTech e ColeTech são a mesma pessoa!');
-        alert('❌ Erro: Você não pode validar seu próprio descarte!');
-        return;
-    }
-
-    // ========== CREDITAR PONTOS ==========
-// ========== CREDITAR PONTOS ==========
-console.log('\n💳 Iniciando créditos...');
-
-if (typeof window.creditarPontos !== 'function') {
-    console.error('❌ A função creditarPontos (de saldo.js) não está disponível!');
-    alert('❌ Erro de Sistema: Função de crédito não encontrada. Verifique o saldo.js.');
-    return;
-}
-
-// 1. Creditar para o DescarTech (dono do lixo)
-console.log(`\n1️⃣ Creditando para DescarTech (${emailDescarTech})...`);
-const sucessoDescarTech = window.creditarPontos(emailDescarTech, pontosDescarTech);
-// ... (restante do código)
-    
-    if (!sucessoDescarTech) {
-        console.error('❌ Falha ao creditar para DescarTech');
-        alert('❌ Erro ao creditar pontos para o DescarTech!');
-        return;
-    }
-    console.log('✅ DescarTech creditado com sucesso');
-
-    // 2. Creditar para o ColeTech (quem validou)
-    console.log(`\n2️⃣ Creditando para ColeTech (${usuarioColeTech.email})...`);
-    const sucessoColeTech = window.creditarPontos(usuarioColeTech.email, comissaoColeTech);
-    
-    if (!sucessoColeTech) {
-        console.warn('⚠️ Falha ao creditar comissão do ColeTech (não crítico)');
-    } else {
-        console.log('✅ ColeTech creditado com sucesso');
-    }
-
-    // ========== ATUALIZAR AGENDAMENTO ==========
-    console.log('\n📝 Atualizando status do agendamento...');
-    
-    agendamentoSelecionado.status = 'concluido';
-    agendamentoSelecionado.peso = peso;
-    agendamentoSelecionado.pontosGerados = pontosDescarTech;
-    agendamentoSelecionado.validadoPor = usuarioColeTech.nome;
-    agendamentoSelecionado.dataValidacao = new Date().toISOString();
-    agendamentoSelecionado.comissaoColeTech = comissaoColeTech;
-
-    localStorage.setItem('agendamentos', JSON.stringify(agendamentos));
-    console.log('✅ Agendamento atualizado');
-
-    // ========== ATUALIZAR APENAS O SALDO DO COLETECH NA TELA ==========
-    console.log('\n🔄 Atualizando saldo do ColeTech na tela...');
-    
-    // Buscar o saldo REAL do ColeTech no banco
-    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-    const emailColeTech = usuarioColeTech.email.toLowerCase().trim();
-    
-    const coletechNoBanco = usuarios.find(u => 
-        (u.email || '').toLowerCase().trim() === emailColeTech ||
-        (u.emailEmpresa || '').toLowerCase().trim() === emailColeTech
+    // ========== USAR A FUNÇÃO DO SISTEMA DE SALDO ==========
+    const resultado = window.SaldoDTech.validarDescarte(
+        emailDescarTech,  // Email do DescarTech
+        emailColeTech,    // Email do ColeTech
+        peso              // Peso em kg
     );
 
-    if (coletechNoBanco) {
-        const saldoColeTechAtualizado = parseFloat(coletechNoBanco.saldo || 0);
-        console.log(`💰 Novo saldo do ColeTech: ${saldoColeTechAtualizado} EC`);
-        
-        // Atualizar sessão
-        usuarioColeTech.saldo = saldoColeTechAtualizado;
-        localStorage.setItem('usuario_logado', JSON.stringify(usuarioColeTech));
-        
-        // Atualizar tela
-        const elSaldo = document.getElementById('valor_saldo');
-        if (elSaldo) {
-            elSaldo.textContent = saldoColeTechAtualizado;
-            console.log('✅ Saldo atualizado na tela');
-        }
-    } else {
-        console.warn('⚠️ ColeTech não encontrado no banco para atualizar tela');
+    if (!resultado.sucesso) {
+        mostrarModalErro('Erro ao Validar', resultado.erro || 'Não foi possível creditar os pontos.');
+        return;
     }
 
-    // ========== MENSAGEM DE SUCESSO ==========
-    console.log('\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
-    console.log('✅ VALIDAÇÃO CONCLUÍDA COM SUCESSO');
-    console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n');
-    
-    alert(`✅ Validação Concluída!\n\n` +
-          `📦 ${agendamentoSelecionado.usuarioNome} recebeu: EC ${pontosDescarTech}\n` +
-          `💼 Você recebeu: EC ${comissaoColeTech}\n\n` +
-          `Peso validado: ${peso}kg`);
-    
+    // Atualizar o agendamento
+    agendamentoSelecionado.status = 'concluido';
+    agendamentoSelecionado.peso = peso;
+    agendamentoSelecionado.pontosGerados = resultado.pontosDescarTech;
+    agendamentoSelecionado.validadoPor = usuarioColeTech.nome;
+    agendamentoSelecionado.dataValidacao = new Date().toISOString();
+
+    // Salvar no localStorage
+    localStorage.setItem('agendamentos', JSON.stringify(agendamentos));
+
+    // ========== MOSTRAR MODAL DE SUCESSO ==========
+    mostrarModalSucesso(
+        'Validação Concluída!',
+        `<div class="space-y-3">
+            <p class="text-lg">Descarte validado com sucesso!</p>
+            
+            <div class="bg-white/5 rounded-xl p-4 space-y-2">
+                <div class="flex justify-between">
+                    <span class="text-white/70">Peso:</span>
+                    <span class="font-bold">${peso}kg</span>
+                </div>
+                <div class="border-t border-white/20 pt-2">
+                    <div class="flex justify-between mb-1">
+                        <span class="text-white/70">DescarTech:</span>
+                        <span class="font-bold text-[#cbff58]">+EC ${resultado.pontosDescarTech}</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-white/70">Você (ColeTech):</span>
+                        <span class="font-bold text-[#cbff58]">+EC ${resultado.pontosColeTech}</span>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="text-sm text-white/50">${agendamentoSelecionado.usuarioNome} recebeu os pontos em sua conta.</p>
+        </div>`
+    );
+
     fecharModal('modalValidacao');
     renderizarTelas();
+}
+
+// ========== FUNÇÕES DE MODAL (EXEMPLO) ==========
+function mostrarModalSucesso(titulo, conteudoHtml) {
+    // Cria ou atualiza o modal
+    let modal = document.getElementById('modalSucesso');
+    
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'modalSucesso';
+        modal.className = 'fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4';
+        document.body.appendChild(modal);
+    }
+    
+    modal.innerHTML = `
+        <div class="bg-[#0A0A0A] border-2 border-[#cbff58] rounded-3xl p-8 max-w-md w-full relative animate-bounce-in">
+            <div class="flex justify-center mb-6">
+                <div class="bg-[#cbff58] rounded-full p-4">
+                    <span class="material-symbols-outlined text-[#0A0A0A]" style="font-size: 4rem;">check_circle</span>
+                </div>
+            </div>
+            
+            <h2 class="text-3xl font-bold text-center mb-4 text-white">${titulo}</h2>
+            
+            <div class="text-white mb-6">
+                ${conteudoHtml}
+            </div>
+            
+            <button 
+                onclick="document.getElementById('modalSucesso').remove()" 
+                class="w-full py-3 bg-[#cbff58] text-black font-bold rounded-xl hover:bg-[#cbff58]/90 active:scale-95 transition-all"
+            >
+                Entendi
+            </button>
+        </div>
+    `;
+    
+    modal.classList.remove('hidden');
+}
+
+function mostrarModalErro(titulo, mensagem) {
+    let modal = document.getElementById('modalErro');
+    
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'modalErro';
+        modal.className = 'fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4';
+        document.body.appendChild(modal);
+    }
+    
+    modal.innerHTML = `
+        <div class="bg-[#0A0A0A] border-2 border-red-500 rounded-3xl p-8 max-w-md w-full relative animate-bounce-in">
+            <div class="flex justify-center mb-6">
+                <div class="bg-red-500 rounded-full p-4">
+                    <span class="material-symbols-outlined text-white" style="font-size: 4rem;">error</span>
+                </div>
+            </div>
+            
+            <h2 class="text-3xl font-bold text-center mb-4 text-white">${titulo}</h2>
+            <p class="text-center text-white/70 mb-6">${mensagem}</p>
+            
+            <button 
+                onclick="document.getElementById('modalErro').remove()" 
+                class="w-full py-3 bg-red-500 text-white font-bold rounded-xl hover:bg-red-500/90 active:scale-95 transition-all"
+            >
+                Fechar
+            </button>
+        </div>
+    `;
+    
+    modal.classList.remove('hidden');
 }
 
 // ========== FECHAR MODAL ==========
